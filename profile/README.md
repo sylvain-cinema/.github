@@ -2,13 +2,13 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/SYLVAIN-000000?style=for-the-badge&labelColor=f59e0b&color=000000" alt="SYLVAIN" height="48"/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/sylvain-logo.png" alt="SYLVAIN" height="80"/>
 
 <br/><br/>
 
-### The Future of Cinematic Storytelling
+**The Future of Cinematic Storytelling**
 
-Every seat is the best seat.
+*Every seat is the best seat.*
 
 <br/>
 
