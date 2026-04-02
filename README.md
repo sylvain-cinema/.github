@@ -8,6 +8,15 @@
 
 **Sylvain Cinema — Organization Configuration**
 
+<br/>
+
+[![Repos](https://img.shields.io/badge/repositories-18-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
+[![License](https://img.shields.io/badge/license-Apache%202.0-f59e0b?style=flat-square)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-sylvain.github.io-f97316?style=flat-square)](https://sylvain-cinema.github.io)
+[![Pre-Seed](https://img.shields.io/badge/stage-Pre--Seed-22c55e?style=flat-square)](https://sylvain.tech/invest)
+[![HQ](https://img.shields.io/badge/HQ-Abu%20Dhabi-06b6d4?style=flat-square)](https://sylvain.tech)
+[![Ecosystem](https://img.shields.io/badge/ecosystem-Zhyra-a855f7?style=flat-square)](https://zhyra.com)
+
 </div>
 
 <br/>
