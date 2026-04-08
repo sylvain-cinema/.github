@@ -12,7 +12,7 @@
 
 <br/>
 
-[![Repos](https://img.shields.io/badge/repositories-18-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
+[![Repos](https://img.shields.io/badge/repositories-19-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
 [![License](https://img.shields.io/badge/license-Apache%202.0-f59e0b?style=flat-square)](https://github.com/sylvain-cinema/spectra/blob/main/LICENSE)
 [![Docs](https://img.shields.io/badge/docs-sylvain.github.io-f97316?style=flat-square)](https://sylvain-cinema.github.io)
 [![Pre-Seed](https://img.shields.io/badge/stage-Pre--Seed-22c55e?style=flat-square)](https://sylvain.tech/invest)
@@ -137,6 +137,7 @@ Every seat as an NFT with dynamic metadata. On-chain booking, demand-based prici
 | [**sylvain-core**](https://github.com/sylvain-cinema/sylvain-core) | Backend microservices for venue management, content delivery, orchestration | Go, gRPC, K8s |
 | [**sylvain-cloud**](https://github.com/sylvain-cinema/sylvain-cloud) | Infrastructure as code for multi-region CDN, GPU compute, edge nodes | Terraform, GCP |
 | [**sylvain-firmware**](https://github.com/sylvain-cinema/sylvain-firmware) | Embedded systems for MicroLED panels, speaker arrays, thermal management | C, Rust, Verilog |
+| [**sylvain-ambient**](https://github.com/sylvain-cinema/sylvain-ambient) | Environmental effects: climate, atmospheric haze, scent diffusion, wind | Rust |
 | [**content-pipeline**](https://github.com/sylvain-cinema/content-pipeline) | Content mastering pipeline for 16K upscaling, HDR grading, WFS audio | Python |
 | [**venue-control**](https://github.com/sylvain-cinema/venue-control) | Real-time auditorium control dashboard for venue operators | Next.js, TypeScript |
 | [**sanctum-app**](https://github.com/sylvain-cinema/sanctum-app) | Private cinema member app with token-gated access | React Native, Expo |

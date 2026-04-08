@@ -10,7 +10,7 @@
 
 <br/>
 
-[![Repos](https://img.shields.io/badge/repositories-18-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
+[![Repos](https://img.shields.io/badge/repositories-19-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
 [![License](https://img.shields.io/badge/license-Apache%202.0-f59e0b?style=flat-square)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-sylvain.github.io-f97316?style=flat-square)](https://sylvain-cinema.github.io)
 [![Pre-Seed](https://img.shields.io/badge/stage-Pre--Seed-22c55e?style=flat-square)](https://sylvain.tech/invest)
@@ -54,7 +54,7 @@ This repository contains the organization-level configuration and community heal
 
 Sylvain is building cinema technology that eliminates the sweet spot problem. Through self-emissive MicroLED displays (SPECTRA), Wave Field Synthesis audio (SONORA), real-time narrative AI (SENTIO), and volumetric 3D (STRATUM), every seat in a Sylvain venue delivers reference-quality immersion.
 
-**18 repositories** across core technology, ABQS convergence stack, platform infrastructure, and research.
+**19 repositories** across core technology, ABQS convergence stack, platform infrastructure, and research.
 
 <br/>
 
