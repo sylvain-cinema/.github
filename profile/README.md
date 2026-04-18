@@ -21,6 +21,30 @@
 
 ---
 
+### SANCTUM — The Pinnacle
+
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-sanctum.png" alt="SANCTUM — Ultra-Exclusive 100-Seat Private Cinema" width="100%"/>
+
+---
+
+### VISIONNAIRE — Flagship Sphere
+
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-visionnaire.png" alt="VISIONNAIRE — 2,000+ Seat Flagship Sphere Venue" width="100%"/>
+
+---
+
+### ETOILEE — Mass Premium
+
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-etoilee.png" alt="ETOILEE — 650+ Seat B2B Licensable Premium Format" width="100%"/>
+
+---
+
+### ATELIER — Creator Suite
+
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-atelier.png" alt="ATELIER — SaaS Content Creation Platform" width="100%"/>
+
+---
+
 <img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/abqs-stack.png" alt="ABQS Convergence Stack — AI, Blockchain, Quantum, Spatial" width="100%"/>
 
 ---
