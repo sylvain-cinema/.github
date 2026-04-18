@@ -1,16 +1,6 @@
 <div align="center">
 
-<br/>
-
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/sylvain-logo.png" alt="SYLVAIN" height="90"/>
-
-<br/><br/>
-
-**The Future of Cinematic Storytelling**
-
-*Every seat is the best seat.*
-
-<br/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/hero-banner.png" alt="SYLVAIN — The Future of Cinematic Storytelling" width="100%"/>
 
 [![Repos](https://img.shields.io/badge/repositories-19-f59e0b?style=flat-square)](https://github.com/orgs/sylvain-cinema/repositories)
 [![License](https://img.shields.io/badge/license-Apache%202.0-f59e0b?style=flat-square)](https://github.com/sylvain-cinema/spectra/blob/main/LICENSE)
@@ -21,101 +11,25 @@
 
 </div>
 
-<br/>
+---
+
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/core-technology.png" alt="Core Technology — SPECTRA, SONORA, SENTIO, STRATUM" width="100%"/>
 
 ---
 
-<br/>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/hero-section.png" alt="Sylvain — The Future of Cinema" width="100%"/>
-</div>
-
-<br/>
-
-## Core Technology
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/technology-section.png" alt="SPECTRA · SONORA · SENTIO · STRATUM" width="100%"/>
-</div>
-
-<br/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/venue-tiers.png" alt="Venue Tiers — SANCTUM, VISIONNAIRE, ETOILEE, ATELIER" width="100%"/>
 
 ---
 
-## Venue Tiers
-
-### SANCTUM — The Pinnacle
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-sanctum.png" alt="SANCTUM — Ultra-Exclusive Private Cinema" width="100%"/>
-</div>
-
-<br/>
-
-### VISIONNAIRE — Flagship Sphere
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-visionnaire.png" alt="VISIONNAIRE — Flagship Sphere Venue" width="100%"/>
-</div>
-
-<br/>
-
-### ETOILEE — Mass Premium
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-etoilee.png" alt="ETOILEE — Mass Premium, B2B Licensable" width="100%"/>
-</div>
-
-<br/>
-
-### ATELIER — Creator Suite
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/tier-atelier.png" alt="ATELIER — Content Creation Tools" width="100%"/>
-</div>
-
-<br/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/abqs-stack.png" alt="ABQS Convergence Stack — AI, Blockchain, Quantum, Spatial" width="100%"/>
 
 ---
 
-## ABQS Convergence Stack
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/abqs-section.png" alt="AI · Blockchain · Quantum · Spatial Intelligence" width="100%"/>
-</div>
-
-<br/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/competitive-landscape.png" alt="Competitive Landscape — Sylvain vs IMAX vs Dolby Cinema vs Sphere" width="100%"/>
 
 ---
 
-## Competitive Landscape
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/comparison-section.png" alt="Sylvain vs IMAX vs Dolby vs Sphere" width="100%"/>
-</div>
-
-<br/>
-
----
-
-## SPECTRA Display Technology
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/spectra-detail.png" alt="SPECTRA — 16K MicroLED Display Engine" width="100%"/>
-</div>
-
-<br/>
-
----
-
-## SONORA Holographic Audio
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/sonora-detail.png" alt="SONORA — Wave Field Synthesis Audio" width="100%"/>
-</div>
-
-<br/>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/system-architecture.png" alt="Repository Architecture — 19 repos across 6 layers" width="100%"/>
 
 ---
 
@@ -134,51 +48,31 @@
 
 | Repository | Description | Stack |
 |:-----------|:------------|:------|
-| [**qontos-engine**](https://github.com/sylvain-cinema/qontos-engine) | Quantum-accelerated WFS computation | Rust, CUDA |
-| [**aethelred-protocol**](https://github.com/sylvain-cinema/aethelred-protocol) | Blockchain memberships, smart contract concierge | Solidity, TypeScript |
-| [**haptic-sync**](https://github.com/sylvain-cinema/haptic-sync) | AI-generated haptic feedback | Rust, Embedded |
-| [**seat-nft**](https://github.com/sylvain-cinema/seat-nft) | Dynamic seat tokenization and royalties | Solidity, TypeScript |
+| [**qontos-engine**](https://github.com/sylvain-cinema/qontos-engine) | Quantum-accelerated WFS computation — 344M matrix solve in 0.28ms | Rust, CUDA |
+| [**aethelred-protocol**](https://github.com/sylvain-cinema/aethelred-protocol) | Token-gated memberships, smart contract concierge | Solidity, TypeScript |
+| [**haptic-sync**](https://github.com/sylvain-cinema/haptic-sync) | AI-generated haptic feedback synchronized with narrative arcs | Rust, Embedded |
+| [**seat-nft**](https://github.com/sylvain-cinema/seat-nft) | Dynamic seat tokenization with ERC-2981 royalties | Solidity, TypeScript |
 
 ### Platform
 
 | Repository | Description | Stack |
 |:-----------|:------------|:------|
-| [**sylvain-sdk**](https://github.com/sylvain-cinema/sylvain-sdk) | Unified developer SDK | TypeScript, Python |
-| [**sylvain-core**](https://github.com/sylvain-cinema/sylvain-core) | Backend microservices | Go, gRPC, K8s |
-| [**sylvain-cloud**](https://github.com/sylvain-cinema/sylvain-cloud) | Infrastructure as code | Terraform, GCP |
-| [**sylvain-firmware**](https://github.com/sylvain-cinema/sylvain-firmware) | Embedded systems | C, Rust, Verilog |
-| [**sylvain-ambient**](https://github.com/sylvain-cinema/sylvain-ambient) | Environmental effects | Rust |
-| [**content-pipeline**](https://github.com/sylvain-cinema/content-pipeline) | Content mastering pipeline | Python |
-| [**venue-control**](https://github.com/sylvain-cinema/venue-control) | Auditorium control dashboard | Next.js |
-| [**sanctum-app**](https://github.com/sylvain-cinema/sanctum-app) | Private cinema member app | React Native |
+| [**sylvain-sdk**](https://github.com/sylvain-cinema/sylvain-sdk) | Unified developer SDK for all Sylvain systems | TypeScript, Python |
+| [**sylvain-core**](https://github.com/sylvain-cinema/sylvain-core) | Backend microservices and API gateway | Go, gRPC, K8s |
+| [**sylvain-cloud**](https://github.com/sylvain-cinema/sylvain-cloud) | Infrastructure as code — multi-region GCP | Terraform, GCP |
+| [**sylvain-firmware**](https://github.com/sylvain-cinema/sylvain-firmware) | Embedded systems for display and audio hardware | C, Rust, Verilog |
+| [**sylvain-ambient**](https://github.com/sylvain-cinema/sylvain-ambient) | Environmental effects — climate, scent, haze, wind | Rust |
+| [**content-pipeline**](https://github.com/sylvain-cinema/content-pipeline) | Content mastering and format conversion pipeline | Python |
+| [**venue-control**](https://github.com/sylvain-cinema/venue-control) | Real-time auditorium control dashboard | Next.js |
+| [**sanctum-app**](https://github.com/sylvain-cinema/sanctum-app) | Private cinema member app with NFT integration | React Native |
 
 ### Knowledge
 
 | Repository | Description |
 |:-----------|:------------|
-| [**research**](https://github.com/sylvain-cinema/research) | 10 technical papers, specifications, architecture decision records |
+| [**research**](https://github.com/sylvain-cinema/research) | 10 technical papers, hardware specifications, architecture decision records |
 | [**docs**](https://github.com/sylvain-cinema/sylvain.github.io) | Developer documentation portal |
-
-<br/>
-
-## Global Launch Markets
-
-Abu Dhabi (HQ) · Barcelona · London · Los Angeles · Mumbai · Paris · Seoul · Shanghai · Singapore · Tokyo
-
-<br/>
 
 ---
 
-<div align="center">
-
-<sub>A <a href="https://zhyra.com">Zhyra</a> ecosystem venture</sub>
-
-<br/>
-
-<sub><a href="mailto:invest@sylvain.tech">invest@sylvain.tech</a> · <a href="mailto:careers@sylvain.tech">careers@sylvain.tech</a></sub>
-
-<br/>
-
-<sub>$95.66B global cinema market by 2032 (Fortune Business Insights)</sub>
-
-</div>
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/screenshots/global-markets.png" alt="Global Markets and Contact Information" width="100%"/>
