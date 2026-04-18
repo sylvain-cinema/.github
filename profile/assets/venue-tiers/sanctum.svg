@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <filter id="gs" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0.8 0.3 0 0  0.6 0.4 0.1 0 0  0 0 0 0 0  0 0 0 0.35 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ps"><feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+    <filter id="sc"><feTurbulence type="fractalNoise" baseFrequency="0 0.4" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.012"/></feComponentTransfer></filter>
+    <filter id="screen-glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0.8 0 0 0  0.6 0.3 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ambient-light">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0.7 0 0 0  0.5 0.3 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <linearGradient id="bg-san" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0806"/><stop offset="30%" stop-color="#0d0b07"/><stop offset="100%" stop-color="#060504"/>
+    </linearGradient>
+    <linearGradient id="gold-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.25"/><stop offset="50%" stop-color="#b45309" stop-opacity="0.1"/><stop offset="100%" stop-color="#fcd34d" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="screen-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.4"/><stop offset="50%" stop-color="#f59e0b" stop-opacity="0.2"/><stop offset="100%" stop-color="#ea580c" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="floor-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1507" stop-opacity="0.3"/><stop offset="100%" stop-color="#0a0806" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wall-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1507" stop-opacity="0.15"/><stop offset="100%" stop-color="#1a1507" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ceiling-grad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0d0b07" stop-opacity="0.2"/><stop offset="100%" stop-color="#0d0b07" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="card-san" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1507" stop-opacity="0.85"/><stop offset="100%" stop-color="#0d0b07" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="screen-light" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.06"/><stop offset="40%" stop-color="#f59e0b" stop-opacity="0.025"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="seat-highlight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.12"/><stop offset="100%" stop-color="#fcd34d" stop-opacity="0"/>
+    </radialGradient>
+
+    <style>
+      text { font-family: 'SF Pro Display', -apple-system, 'Inter', system-ui, sans-serif; }
+      .tier-name { font-size: 22px; font-weight: 200; fill: #fcd34d; letter-spacing: 0.2em; }
+      .tier-sub { font-size: 10px; fill: #92400e; letter-spacing: 0.15em; text-transform: uppercase; }
+      .spec-title { font-size: 8px; font-weight: 600; fill: #d97706; letter-spacing: 0.08em; text-transform: uppercase; }
+      .spec-label { font-size: 6.5px; fill: #78716c; }
+      .spec-value { font-size: 7.5px; fill: #fef3c7; font-family: 'SF Mono', monospace; }
+      .spec-big { font-size: 18px; font-weight: 100; fill: #fcd34d; }
+      .spec-unit { font-size: 9px; fill: #b45309; }
+      .dim-label { font-size: 6px; fill: #92400e; font-family: 'SF Mono', monospace; }
+      .eng { font-size: 5.5px; fill: #57534e; font-family: 'SF Mono', monospace; }
+    </style>
+  </defs>
+
+  <!-- Deep black background with warm undertone -->
+  <rect width="1200" height="800" rx="8" fill="url(#bg-san)"/>
+  <rect width="1200" height="800" rx="8" fill="url(#screen-light)"/>
+  <rect width="1200" height="800" rx="8" fill="url(#sc)" opacity="0.4"/>
+  <rect width="1200" height="800" rx="8" fill="none" stroke="url(#gold-edge)" stroke-width="0.8"/>
+
+  <!-- Gold corner accents -->
+  <line x1="18" y1="8" x2="18" y2="28" stroke="#fcd34d" stroke-width="0.8" opacity="0.2"/>
+  <line x1="8" y1="18" x2="28" y2="18" stroke="#fcd34d" stroke-width="0.8" opacity="0.2"/>
+  <line x1="1182" y1="8" x2="1182" y2="28" stroke="#fcd34d" stroke-width="0.8" opacity="0.1"/>
+  <line x1="1172" y1="18" x2="1192" y2="18" stroke="#fcd34d" stroke-width="0.8" opacity="0.1"/>
+
+  <!-- Header -->
+  <text x="600" y="42" text-anchor="middle" class="tier-sub">THE PINNACLE</text>
+  <text x="600" y="72" text-anchor="middle" class="tier-name" filter="url(#gs)">SYLVAIN SANCTUM</text>
+  <line x1="400" y1="82" x2="800" y2="82" stroke="url(#gold-edge)" stroke-width="0.4"/>
+  <text x="600" y="98" text-anchor="middle" style="font-size:8px; fill:#78716c;">Ultra-exclusive 100-seat private cinema  ·  Token-gated membership  ·  Bespoke calibration  ·  Beyond comparison</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ARCHITECTURAL CROSS-SECTION (center, large)            -->
+  <!-- This is an actual visualization of the physical space  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Auditorium shell (architectural outline) -->
+  <!-- Ceiling arc -->
+  <path d="M 150 180 Q 600 120 1050 180" stroke="#1a1507" stroke-width="0.8" fill="url(#ceiling-grad)" opacity="0.5"/>
+
+  <!-- Left wall -->
+  <path d="M 150 180 L 150 480" stroke="#1a1507" stroke-width="0.6" fill="url(#wall-grad)"/>
+  <rect x="145" y="180" width="8" height="300" fill="url(#wall-grad)"/>
+
+  <!-- Right wall -->
+  <path d="M 1050 180 L 1050 480" stroke="#1a1507" stroke-width="0.6"/>
+  <rect x="1047" y="180" width="8" height="300" fill="url(#wall-grad)" transform="scale(-1,1) translate(-2102,0)"/>
+
+  <!-- Floor -->
+  <rect x="150" y="470" width="900" height="15" rx="2" fill="url(#floor-grad)"/>
+
+  <!-- ═══ THE SCREEN (MicroLED wall — the visual centerpiece) ═══ -->
+  <!-- Curved screen surface with glow -->
+  <path d="M 200 185 Q 600 165 1000 185 L 1000 380 Q 600 400 200 380 Z" fill="url(#screen-grad)" filter="url(#screen-glow)"/>
+  <!-- Screen border (thin gold line) -->
+  <path d="M 200 185 Q 600 165 1000 185" stroke="#fcd34d" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M 200 380 Q 600 400 1000 380" stroke="#fcd34d" stroke-width="0.5" fill="none" opacity="0.2"/>
+  <line x1="200" y1="185" x2="200" y2="380" stroke="#fcd34d" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1000" y1="185" x2="1000" y2="380" stroke="#fcd34d" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Screen light spill into room -->
+  <ellipse cx="600" cy="400" rx="350" ry="80" fill="url(#seat-highlight)" opacity="0.4"/>
+
+  <!-- Screen content hint (abstract film frame visualization) -->
+  <rect x="320" y="220" width="560" height="120" rx="3" fill="#fcd34d" opacity="0.015"/>
+  <!-- Abstract horizontal scan lines suggesting content -->
+  <g opacity="0.02" stroke="#fcd34d" stroke-width="0.3">
+    <line x1="330" y1="240" x2="870" y2="240"/><line x1="330" y1="250" x2="870" y2="250"/>
+    <line x1="330" y1="260" x2="870" y2="260"/><line x1="330" y1="270" x2="870" y2="270"/>
+    <line x1="330" y1="280" x2="870" y2="280"/><line x1="330" y1="290" x2="870" y2="290"/>
+    <line x1="330" y1="300" x2="870" y2="300"/><line x1="330" y1="310" x2="870" y2="310"/>
+    <line x1="330" y1="320" x2="870" y2="320"/>
+  </g>
+
+  <!-- Screen spec label -->
+  <text x="600" y="355" text-anchor="middle" style="font-size:7px; fill:#fcd34d; opacity:0.3; letter-spacing:0.1em; font-family:SF Mono,monospace;">16K MicroLED  ·  15,000 NITS  ·  INFINITE CONTRAST  ·  240 Hz  ·  178°</text>
+
+  <!-- ═══ SPEAKER ARRAYS (visible as thin lines along walls and ceiling) ═══ -->
+  <!-- Ceiling array -->
+  <g opacity="0.15">
+    <line x1="200" y1="177" x2="1000" y2="177" stroke="#06b6d4" stroke-width="3"/>
+    <!-- Individual driver dots -->
+    <g fill="#06b6d4" opacity="0.6">
+      <circle cx="220" cy="177" r="1"/><circle cx="235" cy="177" r="1"/><circle cx="250" cy="177" r="1"/>
+      <circle cx="265" cy="177" r="1"/><circle cx="280" cy="177" r="1"/><circle cx="295" cy="177" r="1"/>
+      <circle cx="310" cy="177" r="1"/><circle cx="325" cy="177" r="1"/><circle cx="340" cy="177" r="1"/>
+      <circle cx="355" cy="177" r="1"/><circle cx="370" cy="177" r="1"/><circle cx="385" cy="177" r="1"/>
+      <circle cx="400" cy="177" r="1"/><circle cx="415" cy="177" r="1"/><circle cx="430" cy="177" r="1"/>
+      <circle cx="445" cy="177" r="1"/><circle cx="460" cy="177" r="1"/><circle cx="475" cy="177" r="1"/>
+      <circle cx="490" cy="177" r="1"/><circle cx="505" cy="177" r="1"/><circle cx="520" cy="177" r="1"/>
+      <circle cx="535" cy="177" r="1"/><circle cx="550" cy="177" r="1"/><circle cx="565" cy="177" r="1"/>
+      <circle cx="580" cy="177" r="1"/><circle cx="595" cy="177" r="1"/><circle cx="610" cy="177" r="1"/>
+      <circle cx="625" cy="177" r="1"/><circle cx="640" cy="177" r="1"/><circle cx="655" cy="177" r="1"/>
+      <circle cx="670" cy="177" r="1"/><circle cx="685" cy="177" r="1"/><circle cx="700" cy="177" r="1"/>
+      <circle cx="715" cy="177" r="1"/><circle cx="730" cy="177" r="1"/><circle cx="745" cy="177" r="1"/>
+      <circle cx="760" cy="177" r="1"/><circle cx="775" cy="177" r="1"/><circle cx="790" cy="177" r="1"/>
+      <circle cx="805" cy="177" r="1"/><circle cx="820" cy="177" r="1"/><circle cx="835" cy="177" r="1"/>
+      <circle cx="850" cy="177" r="1"/><circle cx="865" cy="177" r="1"/><circle cx="880" cy="177" r="1"/>
+      <circle cx="895" cy="177" r="1"/><circle cx="910" cy="177" r="1"/><circle cx="925" cy="177" r="1"/>
+      <circle cx="940" cy="177" r="1"/><circle cx="955" cy="177" r="1"/><circle cx="970" cy="177" r="1"/>
+      <circle cx="985" cy="177" r="1"/>
+    </g>
+  </g>
+
+  <!-- Left wall array -->
+  <g opacity="0.12">
+    <rect x="152" y="185" width="3" height="285" fill="#06b6d4"/>
+    <g fill="#06b6d4" opacity="0.5">
+      <circle cx="153.5" cy="200" r="0.8"/><circle cx="153.5" cy="210" r="0.8"/>
+      <circle cx="153.5" cy="220" r="0.8"/><circle cx="153.5" cy="230" r="0.8"/>
+      <circle cx="153.5" cy="240" r="0.8"/><circle cx="153.5" cy="250" r="0.8"/>
+      <circle cx="153.5" cy="260" r="0.8"/><circle cx="153.5" cy="270" r="0.8"/>
+      <circle cx="153.5" cy="280" r="0.8"/><circle cx="153.5" cy="290" r="0.8"/>
+      <circle cx="153.5" cy="300" r="0.8"/><circle cx="153.5" cy="310" r="0.8"/>
+      <circle cx="153.5" cy="320" r="0.8"/><circle cx="153.5" cy="330" r="0.8"/>
+      <circle cx="153.5" cy="340" r="0.8"/><circle cx="153.5" cy="350" r="0.8"/>
+      <circle cx="153.5" cy="360" r="0.8"/><circle cx="153.5" cy="370" r="0.8"/>
+      <circle cx="153.5" cy="380" r="0.8"/><circle cx="153.5" cy="390" r="0.8"/>
+      <circle cx="153.5" cy="400" r="0.8"/><circle cx="153.5" cy="410" r="0.8"/>
+      <circle cx="153.5" cy="420" r="0.8"/><circle cx="153.5" cy="430" r="0.8"/>
+      <circle cx="153.5" cy="440" r="0.8"/><circle cx="153.5" cy="450" r="0.8"/>
+      <circle cx="153.5" cy="460" r="0.8"/>
+    </g>
+  </g>
+
+  <!-- Right wall array -->
+  <g opacity="0.12">
+    <rect x="1045" y="185" width="3" height="285" fill="#06b6d4"/>
+  </g>
+
+  <!-- ═══ PRIVATE SUITES (actual seat visualization with perspective) ═══ -->
+  <!-- Row 1: closest to screen -->
+  <g filter="url(#ambient-light)">
+    <!-- Each seat is a small rounded rectangle representing a private suite -->
+    <g opacity="0.5">
+      <rect x="300" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="338" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="376" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="414" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="452" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="490" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="528" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="566" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="604" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="642" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="680" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="718" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="756" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="794" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="832" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+      <rect x="870" y="400" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.08"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g opacity="0.45">
+      <rect x="270" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="308" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="346" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="384" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="422" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="460" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="498" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="536" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="574" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="612" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="650" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="688" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="726" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="764" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="802" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="840" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+      <rect x="878" y="422" width="28" height="16" rx="3" fill="#fcd34d" stroke="#fcd34d" stroke-width="0.3" opacity="0.06"/>
+    </g>
+
+    <!-- Rows 3-5 (further back, more faded) -->
+    <g opacity="0.35">
+      <rect x="240" y="444" width="720" height="12" rx="2" fill="#fcd34d" opacity="0.02"/>
+      <rect x="220" y="460" width="760" height="12" rx="2" fill="#fcd34d" opacity="0.015"/>
+      <rect x="200" y="474" width="800" height="10" rx="2" fill="#fcd34d" opacity="0.01"/>
+    </g>
+  </g>
+
+  <!-- Seat count label -->
+  <text x="600" y="498" text-anchor="middle" style="font-size:7px; fill:#92400e; opacity:0.5; letter-spacing:0.08em; font-family:SF Mono,monospace;">100 PRIVATE SUITES  ·  EVERY SEAT = 15,000 NITS + 512 CH WFS + FULL STRATUM</text>
+
+  <!-- ═══ DIMENSION ANNOTATIONS ═══ -->
+  <!-- Width dimension -->
+  <line x1="150" y1="510" x2="1050" y2="510" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <line x1="150" y1="505" x2="150" y2="515" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <line x1="1050" y1="505" x2="1050" y2="515" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <text x="600" y="522" text-anchor="middle" class="dim-label">15 m (intimate width)</text>
+
+  <!-- Depth dimension -->
+  <line x1="130" y1="180" x2="130" y2="480" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <line x1="125" y1="180" x2="135" y2="180" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <line x1="125" y1="480" x2="135" y2="480" stroke="#92400e" stroke-width="0.4" opacity="0.3"/>
+  <text x="120" y="330" text-anchor="end" class="dim-label" transform="rotate(-90, 120, 330)">12 m (depth)</text>
+
+  <!-- ═══ SPECIFICATION PANELS (below the visualization) ═══ -->
+  <!-- Display specs -->
+  <rect x="60" y="545" width="260" height="120" rx="5" fill="url(#card-san)" filter="url(#ps)"/>
+  <rect x="60" y="545" width="260" height="120" rx="5" fill="none" stroke="#92400e" stroke-width="0.3" opacity="0.2"/>
+  <rect x="60" y="545" width="3" height="120" rx="1" fill="#fcd34d" opacity="0.3"/>
+  <text x="78" y="563" class="spec-title">SPECTRA DISPLAY</text>
+  <text x="78" y="580" class="spec-label">Technology</text><text x="200" y="580" class="spec-value">16K MicroLED (self-emissive)</text>
+  <text x="78" y="594" class="spec-label">Brightness</text><text x="200" y="594" class="spec-value">15,000 nits peak</text>
+  <text x="78" y="608" class="spec-label">Contrast</text><text x="200" y="608" class="spec-value">Infinite (true black)</text>
+  <text x="78" y="622" class="spec-label">Resolution</text><text x="200" y="622" class="spec-value">16K × 16K (268M pixels)</text>
+  <text x="78" y="636" class="spec-label">Refresh / Color</text><text x="200" y="636" class="spec-value">240 Hz · 12-bit · Rec.2020</text>
+  <text x="78" y="650" class="spec-label">Viewing</text><text x="200" y="650" class="spec-value">178° uniform (&gt;95% at 85°)</text>
+
+  <!-- Audio specs -->
+  <rect x="340" y="545" width="260" height="120" rx="5" fill="url(#card-san)" filter="url(#ps)"/>
+  <rect x="340" y="545" width="260" height="120" rx="5" fill="none" stroke="#0e7490" stroke-width="0.3" opacity="0.15"/>
+  <rect x="340" y="545" width="3" height="120" rx="1" fill="#06b6d4" opacity="0.25"/>
+  <text x="358" y="563" class="spec-title" fill="#0891b2">SONORA ELITE</text>
+  <text x="358" y="580" class="spec-label">System</text><text x="480" y="580" class="spec-value">Sonora Elite (WFS)</text>
+  <text x="358" y="594" class="spec-label">Channels</text><text x="480" y="594" class="spec-value">512 discrete</text>
+  <text x="358" y="608" class="spec-label">Drivers</text><text x="480" y="608" class="spec-value">8,000+ (80 per seat)</text>
+  <text x="358" y="622" class="spec-label">Range</text><text x="480" y="622" class="spec-value">150 dB · 10 Hz – 40 kHz</text>
+  <text x="358" y="636" class="spec-label">Latency</text><text x="480" y="636" class="spec-value">&lt; 1 ms end-to-end</text>
+  <text x="358" y="650" class="spec-label">Array</text><text x="480" y="650" class="spec-value">Dense planar · Full hemisphere</text>
+
+  <!-- Intelligence specs -->
+  <rect x="620" y="545" width="260" height="120" rx="5" fill="url(#card-san)" filter="url(#ps)"/>
+  <rect x="620" y="545" width="260" height="120" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.15"/>
+  <rect x="620" y="545" width="3" height="120" rx="1" fill="#a855f7" opacity="0.2"/>
+  <text x="638" y="563" class="spec-title" fill="#7c3aed">INTELLIGENCE</text>
+  <text x="638" y="580" class="spec-label">SENTIO</text><text x="760" y="580" class="spec-value">Bespoke tuning per screening</text>
+  <text x="638" y="594" class="spec-label">STRATUM</text><text x="760" y="594" class="spec-value">Full 16-plane · 8K/layer</text>
+  <text x="638" y="608" class="spec-label">Haptic</text><text x="760" y="608" class="spec-value">AI-generated · Sub-20 Hz</text>
+  <text x="638" y="622" class="spec-label">Ambient</text><text x="760" y="622" class="spec-value">Climate · Scent · Haze · Wind</text>
+  <text x="638" y="636" class="spec-label">Access</text><text x="760" y="636" class="spec-value">Token-gated (Aethelred NFT)</text>
+  <text x="638" y="650" class="spec-label">Concierge</text><text x="760" y="650" class="spec-value">24/7 AI + white-glove</text>
+
+  <!-- Experience class -->
+  <rect x="900" y="545" width="240" height="120" rx="5" fill="url(#card-san)" filter="url(#ps)"/>
+  <rect x="900" y="545" width="240" height="120" rx="5" fill="none" stroke="#92400e" stroke-width="0.3" opacity="0.2"/>
+  <rect x="900" y="545" width="3" height="120" rx="1" fill="#fcd34d" opacity="0.3"/>
+  <text x="918" y="563" class="spec-title">EXPERIENCE</text>
+  <text x="1020" y="598" text-anchor="middle" class="spec-big">100</text>
+  <text x="1020" y="614" text-anchor="middle" class="spec-unit">SEATS WORLDWIDE</text>
+  <text x="1020" y="632" text-anchor="middle" style="font-size:6px; fill:#78716c;">ERC-721 hard cap</text>
+  <text x="1020" y="644" text-anchor="middle" style="font-size:6px; fill:#78716c;">Each screening is a private event</text>
+  <text x="1020" y="656" text-anchor="middle" style="font-size:6px; fill:#78716c;">Technology calibrated for perfection</text>
+
+  <!-- Footer -->
+  <rect x="60" y="680" width="1080" height="30" rx="4" fill="url(#card-san)"/>
+  <rect x="60" y="680" width="1080" height="30" rx="4" fill="none" stroke="#92400e" stroke-width="0.2" opacity="0.15"/>
+  <rect x="60" y="680" width="3" height="30" rx="1" fill="#fcd34d" opacity="0.2"/>
+  <text x="78" y="698" style="font-size:7px; fill:#78716c;">SANCTUM venues: Abu Dhabi · Tokyo · Paris · London · Los Angeles · Seoul · Singapore · Shanghai · Barcelona · Mumbai</text>
+  <text x="1130" y="698" text-anchor="end" class="eng">Sylvain Technologies Ltd · A Zhyra Ecosystem Venture</text>
+
+  <!-- Sub-floor annotation -->
+  <text x="600" y="730" text-anchor="middle" class="eng">Every seat delivers 15,000 nit · infinite contrast · 512-channel holographic audio · 16-plane volumetric 3D · AI haptics · subliminal environmental immersion</text>
+
+  <!-- Watermark -->
+  <text x="600" y="780" text-anchor="middle" style="font-size:5px; fill:#1a1507; letter-spacing:0.1em;">SYLVAIN SANCTUM · PRIVATE CINEMA · VENUE TIER SPECIFICATION · CONFIDENTIAL</text>
+</svg>

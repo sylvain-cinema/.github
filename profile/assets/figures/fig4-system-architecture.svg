@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" fill="none">
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+      .fig-title { font-size: 11px; font-weight: 600; fill: #c9d1d9; letter-spacing: 0.02em; }
+      .fig-subtitle { font-size: 9px; fill: #8b949e; font-style: italic; }
+      .block-title { font-size: 9px; font-weight: 600; fill: #c9d1d9; letter-spacing: 0.04em; }
+      .block-detail { font-size: 7.5px; fill: #8b949e; }
+      .data-rate { font-size: 7px; fill: #58a6ff; font-family: 'SF Mono', monospace; }
+      .latency { font-size: 7px; fill: #3fb950; font-family: 'SF Mono', monospace; }
+      .arrow { stroke: #30363d; stroke-width: 1; fill: none; marker-end: url(#arrow-head); }
+      .arrow-data { stroke: #58a6ff; stroke-width: 0.8; fill: none; marker-end: url(#arrow-blue); stroke-dasharray: 4 2; }
+    </style>
+    <marker id="arrow-head" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#30363d"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 5 2, 0 4" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 5 2, 0 4" fill="#a371f7"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="520" rx="6" fill="#0d1117"/>
+  <rect width="1000" height="520" rx="6" fill="none" stroke="#21262d" stroke-width="0.5"/>
+
+  <text x="500" y="22" text-anchor="middle" class="fig-title">Figure 4. Integrated SPECTRA + SONORA System Architecture with Data Rates and Latency Budget</text>
+  <text x="500" y="36" text-anchor="middle" class="fig-subtitle">End-to-end signal flow from Sylvain Certified content decode through subsystem output, orchestrated by SENTIO narrative intelligence</text>
+
+  <!-- ═══════ CONTENT SOURCE ═══════ -->
+  <rect x="20" y="60" width="100" height="60" rx="5" fill="#161b22" stroke="#30363d"/>
+  <text x="70" y="80" text-anchor="middle" class="block-title">CONTENT</text>
+  <text x="70" y="92" text-anchor="middle" class="block-detail">Sylvain Certified</text>
+  <text x="70" y="102" text-anchor="middle" class="block-detail">AV1/HEVC + WFS</text>
+  <text x="70" y="112" text-anchor="middle" class="data-rate">~500 Mbps</text>
+
+  <!-- Arrow to demux -->
+  <line x1="120" y1="90" x2="148" y2="90" class="arrow"/>
+
+  <!-- DEMUX -->
+  <rect x="148" y="65" width="60" height="50" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="178" y="85" text-anchor="middle" class="block-title">DEMUX</text>
+  <text x="178" y="97" text-anchor="middle" class="block-detail">V / A / Meta</text>
+
+  <!-- Fork to video and audio paths -->
+  <line x1="208" y1="80" x2="240" y2="80" class="arrow"/>
+  <line x1="208" y1="100" x2="240" y2="220" class="arrow"/>
+  <line x1="208" y1="90" x2="240" y2="370" stroke="#a371f7" stroke-width="0.8" fill="none" marker-end="url(#arrow-purple)" stroke-dasharray="3 2"/>
+
+  <!-- ═══════ VISUAL PATH (top) ═══════ -->
+  <rect x="20" y="48" width="960" height="2" rx="1" fill="#f59e0b" opacity="0.15"/>
+  <text x="25" y="58" class="data-rate" fill="#f59e0b">VISUAL PATH</text>
+
+  <!-- Video Decode -->
+  <rect x="240" y="55" width="100" height="55" rx="5" fill="#161b22" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="290" y="72" text-anchor="middle" class="block-title" fill="#f59e0b">VIDEO DECODE</text>
+  <text x="290" y="84" text-anchor="middle" class="block-detail">AV1 / HEVC</text>
+  <text x="290" y="94" text-anchor="middle" class="block-detail">15360×8640 @ 240Hz</text>
+  <text x="290" y="104" text-anchor="middle" class="latency">0.8 ms decode</text>
+  <line x1="340" y1="82" x2="368" y2="82" class="arrow"/>
+
+  <!-- Color Science -->
+  <rect x="368" y="55" width="110" height="55" rx="5" fill="#161b22" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="423" y="72" text-anchor="middle" class="block-title" fill="#f59e0b">COLOR SCIENCE</text>
+  <text x="423" y="84" text-anchor="middle" class="block-detail">Gamut: src → Rec.2020</text>
+  <text x="423" y="94" text-anchor="middle" class="block-detail">HDR: PQ @ 12,000 nits</text>
+  <text x="423" y="104" text-anchor="middle" class="latency">0.4 ms gamut+tone</text>
+  <line x1="478" y1="82" x2="506" y2="82" class="arrow"/>
+
+  <!-- Framebuffer -->
+  <rect x="506" y="55" width="110" height="55" rx="5" fill="#161b22" stroke="#f97316" stroke-width="0.8"/>
+  <text x="561" y="72" text-anchor="middle" class="block-title" fill="#f97316">16K FRAMEBUFFER</text>
+  <text x="561" y="84" text-anchor="middle" class="block-detail">268M px × 48-bit RGB</text>
+  <text x="561" y="94" text-anchor="middle" class="data-rate">1,144 Gbps internal</text>
+  <text x="561" y="104" text-anchor="middle" class="latency">0.3 ms render</text>
+  <line x1="616" y1="82" x2="644" y2="82" class="arrow"/>
+
+  <!-- Calibration + Panel Mapping -->
+  <rect x="644" y="55" width="110" height="55" rx="5" fill="#161b22" stroke="#ea580c" stroke-width="0.8"/>
+  <text x="699" y="72" text-anchor="middle" class="block-title" fill="#ea580c">CALIBRATION</text>
+  <text x="699" y="84" text-anchor="middle" class="block-detail">Uniformity correction</text>
+  <text x="699" y="94" text-anchor="middle" class="block-detail">Panel tiling + seam comp.</text>
+  <text x="699" y="104" text-anchor="middle" class="latency">0.2 ms cal+tile</text>
+  <line x1="754" y1="82" x2="782" y2="82" class="arrow"/>
+
+  <!-- Panel Output -->
+  <rect x="782" y="55" width="90" height="55" rx="5" fill="#161b22" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="827" y="72" text-anchor="middle" class="block-title" fill="#f59e0b">MicroLED</text>
+  <text x="827" y="84" text-anchor="middle" class="block-detail">12,000 nits peak</text>
+  <text x="827" y="94" text-anchor="middle" class="block-detail">∞:1 contrast</text>
+  <text x="827" y="104" text-anchor="middle" class="block-detail">178° viewing</text>
+
+  <!-- OUTPUT indicator -->
+  <rect x="882" y="65" width="90" height="35" rx="5" fill="#f59e0b" opacity="0.15" stroke="#f59e0b"/>
+  <text x="927" y="80" text-anchor="middle" class="block-title" fill="#f59e0b">DISPLAY</text>
+  <text x="927" y="92" text-anchor="middle" class="block-detail" fill="#f59e0b">3,000 m² @ 240 Hz</text>
+
+  <!-- Visual path latency bar -->
+  <rect x="240" y="120" width="640" height="12" rx="2" fill="#161b22" stroke="#21262d"/>
+  <rect x="240" y="120" width="160" height="12" rx="2" fill="#f59e0b" opacity="0.1"/>
+  <rect x="400" y="120" width="88" height="12" rx="2" fill="#f59e0b" opacity="0.08"/>
+  <rect x="488" y="120" width="66" height="12" rx="2" fill="#f59e0b" opacity="0.06"/>
+  <rect x="554" y="120" width="44" height="12" rx="2" fill="#f59e0b" opacity="0.04"/>
+  <text x="555" y="145" text-anchor="middle" class="latency">Visual total: 1.7 ms (4.17 ms frame budget @ 240 Hz)</text>
+
+  <!-- ═══════ AUDIO PATH (middle) ═══════ -->
+  <rect x="20" y="188" width="960" height="2" rx="1" fill="#06b6d4" opacity="0.15"/>
+  <text x="25" y="198" class="data-rate" fill="#06b6d4">AUDIO PATH</text>
+
+  <!-- Audio Decode -->
+  <rect x="240" y="200" width="100" height="55" rx="5" fill="#161b22" stroke="#06b6d4" stroke-width="0.8"/>
+  <text x="290" y="217" text-anchor="middle" class="block-title" fill="#06b6d4">AUDIO DECODE</text>
+  <text x="290" y="229" text-anchor="middle" class="block-detail">WFS metadata</text>
+  <text x="290" y="239" text-anchor="middle" class="block-detail">2,048 sources @ 48kHz</text>
+  <text x="290" y="249" text-anchor="middle" class="latency">0.1 ms decode</text>
+  <line x1="340" y1="227" x2="368" y2="227" class="arrow"/>
+
+  <!-- Scene Graph -->
+  <rect x="368" y="200" width="100" height="55" rx="5" fill="#161b22" stroke="#06b6d4" stroke-width="0.8"/>
+  <text x="418" y="217" text-anchor="middle" class="block-title" fill="#06b6d4">SCENE GRAPH</text>
+  <text x="418" y="229" text-anchor="middle" class="block-detail">3D source positioning</text>
+  <text x="418" y="239" text-anchor="middle" class="block-detail">Room model (80×38m)</text>
+  <text x="418" y="249" text-anchor="middle" class="latency">0.05 ms update</text>
+  <line x1="468" y1="227" x2="496" y2="227" class="arrow"/>
+
+  <!-- QONTOS WFS Solver -->
+  <rect x="496" y="195" width="130" height="65" rx="5" fill="#161b22" stroke="#0891b2" stroke-width="1.2"/>
+  <text x="561" y="212" text-anchor="middle" class="block-title" fill="#0891b2">QONTOS WFS</text>
+  <text x="561" y="224" text-anchor="middle" class="block-detail">344M element matrix</text>
+  <text x="561" y="234" text-anchor="middle" class="block-detail">78.2% sparse, GPU solve</text>
+  <text x="561" y="244" text-anchor="middle" class="data-rate">4× A100 80GB</text>
+  <text x="561" y="254" text-anchor="middle" class="latency">0.28 ms (28% headroom)</text>
+  <line x1="626" y1="227" x2="654" y2="227" class="arrow"/>
+
+  <!-- DSP -->
+  <rect x="654" y="200" width="100" height="55" rx="5" fill="#161b22" stroke="#0e7490" stroke-width="0.8"/>
+  <text x="704" y="217" text-anchor="middle" class="block-title" fill="#0e7490">DSP ENGINE</text>
+  <text x="704" y="229" text-anchor="middle" class="block-detail">Biquad + FIR + delay</text>
+  <text x="704" y="239" text-anchor="middle" class="block-detail">Per-driver crossover</text>
+  <text x="704" y="249" text-anchor="middle" class="latency">0.30 ms DSP</text>
+  <line x1="754" y1="227" x2="782" y2="227" class="arrow"/>
+
+  <!-- Speaker Output -->
+  <rect x="782" y="200" width="90" height="55" rx="5" fill="#161b22" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="827" y="217" text-anchor="middle" class="block-title" fill="#06b6d4">DRIVERS</text>
+  <text x="827" y="229" text-anchor="middle" class="block-detail">168,000+ speakers</text>
+  <text x="827" y="239" text-anchor="middle" class="block-detail">150 dB, 10-40kHz</text>
+  <text x="827" y="249" text-anchor="middle" class="latency">0.15 ms output</text>
+
+  <!-- OUTPUT indicator -->
+  <rect x="882" y="210" width="90" height="35" rx="5" fill="#06b6d4" opacity="0.15" stroke="#06b6d4"/>
+  <text x="927" y="225" text-anchor="middle" class="block-title" fill="#06b6d4">AUDIO</text>
+  <text x="927" y="237" text-anchor="middle" class="block-detail" fill="#06b6d4">Holographic WFS</text>
+
+  <!-- Audio path latency bar -->
+  <rect x="240" y="265" width="640" height="12" rx="2" fill="#161b22" stroke="#21262d"/>
+  <rect x="240" y="265" width="40" height="12" rx="2" fill="#06b6d4" opacity="0.1"/>
+  <rect x="280" y="265" width="20" height="12" rx="2" fill="#06b6d4" opacity="0.08"/>
+  <rect x="300" y="265" width="112" height="12" rx="2" fill="#06b6d4" opacity="0.12"/>
+  <rect x="412" y="265" width="120" height="12" rx="2" fill="#06b6d4" opacity="0.08"/>
+  <rect x="532" y="265" width="60" height="12" rx="2" fill="#06b6d4" opacity="0.04"/>
+  <text x="555" y="290" text-anchor="middle" class="latency">Audio total: 0.88 ms (&lt;1 ms budget, 5.33 ms block period @ 48kHz/256)</text>
+
+  <!-- ═══════ SENTIO CONTROL PATH ═══════ -->
+  <rect x="20" y="338" width="960" height="2" rx="1" fill="#a371f7" opacity="0.15"/>
+  <text x="25" y="348" class="data-rate" fill="#a371f7">SENTIO CONTROL PATH</text>
+
+  <rect x="240" y="350" width="140" height="55" rx="5" fill="#161b22" stroke="#a371f7" stroke-width="0.8"/>
+  <text x="310" y="367" text-anchor="middle" class="block-title" fill="#a371f7">NARRATIVE TRANSFORMER</text>
+  <text x="310" y="379" text-anchor="middle" class="block-detail">1.5T params, 50+ PFLOPS</text>
+  <text x="310" y="389" text-anchor="middle" class="block-detail">98.7% emotion accuracy</text>
+  <text x="310" y="399" text-anchor="middle" class="latency">7.7 ms inference</text>
+
+  <line x1="380" y1="377" x2="410" y2="377" class="arrow"/>
+
+  <rect x="410" y="350" width="120" height="55" rx="5" fill="#161b22" stroke="#a371f7" stroke-width="0.8"/>
+  <text x="470" y="367" text-anchor="middle" class="block-title" fill="#a371f7">ORCHESTRATOR</text>
+  <text x="470" y="379" text-anchor="middle" class="block-detail">Emotion → subsystem cmds</text>
+  <text x="470" y="389" text-anchor="middle" class="block-detail">gRPC dispatch</text>
+  <text x="470" y="399" text-anchor="middle" class="latency">0.8 ms generate+send</text>
+
+  <!-- SENTIO control arrows to visual and audio paths -->
+  <line x1="470" y1="350" x2="423" y2="110" stroke="#a371f7" stroke-width="0.6" fill="none" marker-end="url(#arrow-purple)" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="470" y1="350" x2="561" y2="110" stroke="#a371f7" stroke-width="0.6" fill="none" marker-end="url(#arrow-purple)" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="470" y1="350" x2="418" y2="255" stroke="#a371f7" stroke-width="0.6" fill="none" marker-end="url(#arrow-purple)" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="470" y1="350" x2="704" y2="255" stroke="#a371f7" stroke-width="0.6" fill="none" marker-end="url(#arrow-purple)" stroke-dasharray="3 2" opacity="0.5"/>
+
+  <!-- Labels on SENTIO arrows -->
+  <text x="435" y="230" class="data-rate" fill="#a371f7" transform="rotate(-65, 435, 230)">reverb, width</text>
+  <text x="385" y="195" class="data-rate" fill="#a371f7" transform="rotate(-55, 385, 195)">brightness, color</text>
+
+  <!-- ═══════ BOTTOM SUMMARY ═══════ -->
+  <rect x="20" y="420" width="960" height="90" rx="6" fill="#161b22" stroke="#21262d"/>
+
+  <!-- Latency summary -->
+  <text x="40" y="440" class="block-title" fill="#3fb950">LATENCY BUDGET SUMMARY</text>
+  <text x="40" y="455" class="block-detail">Visual path:  0.8 + 0.4 + 0.3 + 0.2 = 1.7 ms   (budget: 4.17 ms @ 240 Hz = 59% headroom)</text>
+  <text x="40" y="468" class="block-detail">Audio path:   0.1 + 0.05 + 0.28 + 0.30 + 0.15 = 0.88 ms   (budget: 1.0 ms = 12% headroom)</text>
+  <text x="40" y="481" class="block-detail">SENTIO:       7.7 + 0.8 = 8.5 ms   (budget: &lt;10 ms, within 2 display frames)</text>
+
+  <!-- Data rate summary -->
+  <text x="520" y="440" class="block-title" fill="#58a6ff">DATA RATES</text>
+  <text x="520" y="455" class="block-detail">Content ingest: ~500 Mbps (Sylvain Certified compressed)</text>
+  <text x="520" y="468" class="block-detail">Framebuffer: 1,144 Gbps (268M × 48-bit × 240 Hz internal)</text>
+  <text x="520" y="481" class="block-detail">Audio output: 2,048 ch × 24-bit × 48 kHz = 2.36 Gbps</text>
+
+  <!-- Key result -->
+  <text x="40" y="500" class="block-title" fill="#f59e0b">RESULT:</text>
+  <text x="105" y="500" class="block-detail">Combined visual + audio sweet spot coverage = 98.4% (1,982 / 2,016 seats at &gt;95% reference quality)</text>
+</svg>

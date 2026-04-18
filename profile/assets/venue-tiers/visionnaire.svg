@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" fill="none">
+  <defs>
+    <filter id="gv" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0.3 0.5 0.8 0 0  0.1 0.3 0.6 0 0  0 0 0 0.3 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pv"><feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="sv"><feTurbulence type="fractalNoise" baseFrequency="0 0.4" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.012"/></feComponentTransfer></filter>
+    <filter id="sphere-glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0.2 0.4 0.7 0 0  0.1 0.3 0.6 0 0  0 0 0 0.12 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="screen-glow-v">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0.3 0.6 0.8 0 0  0.2 0.5 0.7 0 0  0 0 0 0.15 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <linearGradient id="bg-vis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060a10"/><stop offset="30%" stop-color="#080c14"/><stop offset="100%" stop-color="#040608"/>
+    </linearGradient>
+    <linearGradient id="vis-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2"/><stop offset="50%" stop-color="#0891b2" stop-opacity="0.08"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="sphere-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0891b2" stop-opacity="0.3"/><stop offset="40%" stop-color="#06b6d4" stop-opacity="0.15"/><stop offset="100%" stop-color="#164e63" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="card-vis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1420" stop-opacity="0.9"/><stop offset="100%" stop-color="#080c14" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="floor-vis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1420" stop-opacity="0.2"/><stop offset="100%" stop-color="#060a10" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sphere-light" cx="50%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.04"/><stop offset="40%" stop-color="#0891b2" stop-opacity="0.015"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="screen-spill" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.08"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <style>
+      text { font-family: 'SF Pro Display', -apple-system, 'Inter', system-ui, sans-serif; }
+      .tier-name { font-size: 22px; font-weight: 200; fill: #22d3ee; letter-spacing: 0.2em; }
+      .tier-sub { font-size: 10px; fill: #164e63; letter-spacing: 0.15em; text-transform: uppercase; }
+      .spec-title { font-size: 8px; font-weight: 600; fill: #0891b2; letter-spacing: 0.08em; text-transform: uppercase; }
+      .spec-label { font-size: 6.5px; fill: #475569; }
+      .spec-value { font-size: 7.5px; fill: #e0f2fe; font-family: 'SF Mono', monospace; }
+      .spec-big { font-size: 18px; font-weight: 100; fill: #22d3ee; }
+      .spec-unit { font-size: 9px; fill: #0891b2; }
+      .dim-label { font-size: 6px; fill: #164e63; font-family: 'SF Mono', monospace; }
+      .eng { font-size: 5.5px; fill: #334155; font-family: 'SF Mono', monospace; }
+    </style>
+  </defs>
+
+  <!-- Deep blue-black background -->
+  <rect width="1200" height="850" rx="8" fill="url(#bg-vis)"/>
+  <rect width="1200" height="850" rx="8" fill="url(#sphere-light)"/>
+  <rect width="1200" height="850" rx="8" fill="url(#sv)" opacity="0.4"/>
+  <rect width="1200" height="850" rx="8" fill="none" stroke="url(#vis-edge)" stroke-width="0.8"/>
+
+  <!-- Cyan corner accents -->
+  <line x1="18" y1="8" x2="18" y2="28" stroke="#06b6d4" stroke-width="0.8" opacity="0.2"/>
+  <line x1="8" y1="18" x2="28" y2="18" stroke="#06b6d4" stroke-width="0.8" opacity="0.2"/>
+  <line x1="1182" y1="8" x2="1182" y2="28" stroke="#06b6d4" stroke-width="0.8" opacity="0.1"/>
+  <line x1="1172" y1="18" x2="1192" y2="18" stroke="#06b6d4" stroke-width="0.8" opacity="0.1"/>
+
+  <!-- Header -->
+  <text x="600" y="42" text-anchor="middle" class="tier-sub">FLAGSHIP SPHERE</text>
+  <text x="600" y="72" text-anchor="middle" class="tier-name" filter="url(#gv)">SYLVAIN VISIONNAIRE</text>
+  <line x1="380" y1="82" x2="820" y2="82" stroke="url(#vis-edge)" stroke-width="0.4"/>
+  <text x="600" y="98" text-anchor="middle" style="font-size:8px; fill:#475569;">2,000+ seats  ·  Sphere-shaped auditorium  ·  80m x 38m  ·  100% universal sweet spot  ·  Comparable to Sphere Las Vegas</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SPHERE AUDITORIUM CROSS-SECTION                    -->
+  <!-- Actual architectural visualization of the sphere   -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Sphere shell (outer dome) -->
+  <ellipse cx="600" cy="350" rx="440" ry="220" fill="none" stroke="#164e63" stroke-width="1" opacity="0.2"/>
+  <ellipse cx="600" cy="350" rx="435" ry="217" fill="none" stroke="#0e7490" stroke-width="0.3" opacity="0.1"/>
+
+  <!-- Panoramic screen wrapping the upper hemisphere -->
+  <path d="M 180 210 Q 300 140 600 120 Q 900 140 1020 210 L 1020 400 Q 900 430 600 440 Q 300 430 180 400 Z" fill="url(#sphere-screen)" filter="url(#screen-glow-v)"/>
+  <!-- Screen border glow -->
+  <path d="M 180 210 Q 300 140 600 120 Q 900 140 1020 210" stroke="#22d3ee" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M 180 400 Q 300 430 600 440 Q 900 430 1020 400" stroke="#06b6d4" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <line x1="180" y1="210" x2="180" y2="400" stroke="#06b6d4" stroke-width="0.4" opacity="0.1"/>
+  <line x1="1020" y1="210" x2="1020" y2="400" stroke="#06b6d4" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Screen content hint — abstract cinematic imagery -->
+  <rect x="300" y="200" width="600" height="160" rx="4" fill="#06b6d4" opacity="0.008"/>
+  <g opacity="0.015" stroke="#22d3ee" stroke-width="0.3">
+    <line x1="310" y1="220" x2="890" y2="220"/><line x1="310" y1="235" x2="890" y2="235"/>
+    <line x1="310" y1="250" x2="890" y2="250"/><line x1="310" y1="265" x2="890" y2="265"/>
+    <line x1="310" y1="280" x2="890" y2="280"/><line x1="310" y1="295" x2="890" y2="295"/>
+    <line x1="310" y1="310" x2="890" y2="310"/><line x1="310" y1="325" x2="890" y2="325"/>
+    <line x1="310" y1="340" x2="890" y2="340"/>
+  </g>
+
+  <!-- Screen spec label -->
+  <text x="600" y="380" text-anchor="middle" style="font-size:6px; fill:#06b6d4; opacity:0.25; letter-spacing:0.1em; font-family:SF Mono,monospace;">3,000 m2 PANORAMIC MicroLED  ·  16K x 16K  ·  268M PIXELS  ·  12,000 NITS  ·  INFINITE CONTRAST  ·  240 Hz</text>
+
+  <!-- Screen light spill onto seating -->
+  <ellipse cx="600" cy="440" rx="380" ry="70" fill="url(#screen-spill)" opacity="0.5"/>
+
+  <!-- Speaker arrays (cylindrical, wrapping around auditorium) -->
+  <!-- Ceiling array -->
+  <g opacity="0.1">
+    <path d="M 200 205 Q 600 115 1000 205" stroke="#06b6d4" stroke-width="2.5" fill="none"/>
+    <g fill="#06b6d4" opacity="0.5">
+      <circle cx="220" cy="200" r="0.8"/><circle cx="240" cy="195" r="0.8"/><circle cx="260" cy="191" r="0.8"/>
+      <circle cx="280" cy="187" r="0.8"/><circle cx="300" cy="183" r="0.8"/><circle cx="320" cy="180" r="0.8"/>
+      <circle cx="340" cy="177" r="0.8"/><circle cx="360" cy="174" r="0.8"/><circle cx="380" cy="172" r="0.8"/>
+      <circle cx="400" cy="170" r="0.8"/><circle cx="420" cy="168" r="0.8"/><circle cx="440" cy="167" r="0.8"/>
+      <circle cx="460" cy="166" r="0.8"/><circle cx="480" cy="165" r="0.8"/><circle cx="500" cy="164" r="0.8"/>
+      <circle cx="520" cy="163" r="0.8"/><circle cx="540" cy="163" r="0.8"/><circle cx="560" cy="162" r="0.8"/>
+      <circle cx="580" cy="162" r="0.8"/><circle cx="600" cy="162" r="0.8"/><circle cx="620" cy="162" r="0.8"/>
+      <circle cx="640" cy="162" r="0.8"/><circle cx="660" cy="163" r="0.8"/><circle cx="680" cy="163" r="0.8"/>
+      <circle cx="700" cy="164" r="0.8"/><circle cx="720" cy="165" r="0.8"/><circle cx="740" cy="166" r="0.8"/>
+      <circle cx="760" cy="167" r="0.8"/><circle cx="780" cy="168" r="0.8"/><circle cx="800" cy="170" r="0.8"/>
+      <circle cx="820" cy="172" r="0.8"/><circle cx="840" cy="174" r="0.8"/><circle cx="860" cy="177" r="0.8"/>
+      <circle cx="880" cy="180" r="0.8"/><circle cx="900" cy="183" r="0.8"/><circle cx="920" cy="187" r="0.8"/>
+      <circle cx="940" cy="191" r="0.8"/><circle cx="960" cy="195" r="0.8"/><circle cx="980" cy="200" r="0.8"/>
+    </g>
+  </g>
+
+  <!-- Wall arrays (left and right) -->
+  <g opacity="0.08">
+    <rect x="172" y="210" width="4" height="260" fill="#06b6d4"/>
+    <rect x="1024" y="210" width="4" height="260" fill="#06b6d4"/>
+  </g>
+
+  <!-- ═══ SEATING (2,000+ seats in sphere arrangement) ═══ -->
+
+  <!-- Orchestra level (1,200 seats) — front section -->
+  <g opacity="0.4">
+    <!-- Individual seat rows curving with the sphere -->
+    <path d="M 240 415 Q 600 395 960 415" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.15"/>
+    <path d="M 250 430 Q 600 410 950 430" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.13"/>
+    <path d="M 260 445 Q 600 425 940 445" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.12"/>
+    <path d="M 270 458 Q 600 440 930 458" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.11"/>
+    <path d="M 280 470 Q 600 453 920 470" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.10"/>
+    <path d="M 290 482 Q 600 466 910 482" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.09"/>
+    <path d="M 300 493 Q 600 478 900 493" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.08"/>
+    <path d="M 310 503 Q 600 490 890 503" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.07"/>
+    <path d="M 320 512 Q 600 500 880 512" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.065"/>
+    <path d="M 330 520 Q 600 510 870 520" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.06"/>
+  </g>
+  <text x="160" y="470" text-anchor="end" class="dim-label">Orchestra</text>
+  <text x="160" y="480" text-anchor="end" class="dim-label">1,200 seats</text>
+
+  <!-- Mezzanine level (800 seats) — rear elevated section -->
+  <g opacity="0.3">
+    <path d="M 350 528 Q 600 518 850 528" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.06"/>
+    <path d="M 360 536 Q 600 527 840 536" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.055"/>
+    <path d="M 370 543 Q 600 535 830 543" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.05"/>
+    <path d="M 380 549 Q 600 542 820 549" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.045"/>
+    <path d="M 390 555 Q 600 549 810 555" stroke="#22d3ee" stroke-width="0.3" fill="none" opacity="0.04"/>
+  </g>
+  <text x="160" y="540" text-anchor="end" class="dim-label">Mezzanine</text>
+  <text x="160" y="550" text-anchor="end" class="dim-label">800 seats</text>
+
+  <!-- Seat count label -->
+  <text x="600" y="575" text-anchor="middle" style="font-size:6px; fill:#164e63; opacity:0.5; letter-spacing:0.06em; font-family:SF Mono,monospace;">2,000+ SEATS  ·  84 DRIVERS PER SEAT  ·  168,000+ SPEAKER DRIVERS  ·  EVERY SEAT = REFERENCE QUALITY</text>
+
+  <!-- Dimension annotations -->
+  <line x1="160" y1="590" x2="1040" y2="590" stroke="#164e63" stroke-width="0.4" opacity="0.25"/>
+  <line x1="160" y1="585" x2="160" y2="595" stroke="#164e63" stroke-width="0.4" opacity="0.25"/>
+  <line x1="1040" y1="585" x2="1040" y2="595" stroke="#164e63" stroke-width="0.4" opacity="0.25"/>
+  <text x="600" y="604" text-anchor="middle" class="dim-label">80 m (parabolic array width)</text>
+
+  <line x1="140" y1="120" x2="140" y2="560" stroke="#164e63" stroke-width="0.4" opacity="0.2"/>
+  <line x1="135" y1="120" x2="145" y2="120" stroke="#164e63" stroke-width="0.4" opacity="0.2"/>
+  <line x1="135" y1="560" x2="145" y2="560" stroke="#164e63" stroke-width="0.4" opacity="0.2"/>
+  <text x="130" y="340" text-anchor="end" class="dim-label" transform="rotate(-90, 130, 340)">38 m (depth)</text>
+
+  <!-- ═══ SPECIFICATION PANELS ═══ -->
+
+  <!-- Display -->
+  <rect x="60" y="620" width="260" height="110" rx="5" fill="url(#card-vis)" filter="url(#pv)"/>
+  <rect x="60" y="620" width="260" height="110" rx="5" fill="none" stroke="#164e63" stroke-width="0.3" opacity="0.2"/>
+  <rect x="60" y="620" width="3" height="110" rx="1" fill="#f59e0b" opacity="0.3"/>
+  <text x="78" y="636" class="spec-title" fill="#d97706">SPECTRA DISPLAY</text>
+  <text x="78" y="652" class="spec-label">Screen</text><text x="200" y="652" class="spec-value">3,000 m2 panoramic MicroLED</text>
+  <text x="78" y="664" class="spec-label">Resolution</text><text x="200" y="664" class="spec-value">16K x 16K (268M pixels)</text>
+  <text x="78" y="676" class="spec-label">Brightness</text><text x="200" y="676" class="spec-value">12,000 nits peak · Infinite contrast</text>
+  <text x="78" y="688" class="spec-label">Refresh</text><text x="200" y="688" class="spec-value">240 Hz · 12-bit · 100% Rec.2020</text>
+  <text x="78" y="700" class="spec-label">Viewing</text><text x="200" y="700" class="spec-value">178° uniform (98.4% sweet spot)</text>
+  <text x="78" y="714" class="spec-label">Panel life</text><text x="200" y="714" class="spec-value">100,000+ hours</text>
+
+  <!-- Audio -->
+  <rect x="340" y="620" width="260" height="110" rx="5" fill="url(#card-vis)" filter="url(#pv)"/>
+  <rect x="340" y="620" width="260" height="110" rx="5" fill="none" stroke="#0e7490" stroke-width="0.3" opacity="0.2"/>
+  <rect x="340" y="620" width="3" height="110" rx="1" fill="#06b6d4" opacity="0.3"/>
+  <text x="358" y="636" class="spec-title">SONORA WFS AUDIO</text>
+  <text x="358" y="652" class="spec-label">Array</text><text x="480" y="652" class="spec-value">Cylindrical 80m x 38m</text>
+  <text x="358" y="664" class="spec-label">Channels</text><text x="480" y="664" class="spec-value">2,048+ discrete (16x Atmos)</text>
+  <text x="358" y="676" class="spec-label">Drivers</text><text x="480" y="676" class="spec-value">168,000+ (84 per seat)</text>
+  <text x="358" y="688" class="spec-label">Range</text><text x="480" y="688" class="spec-value">150 dB · 10 Hz - 40 kHz</text>
+  <text x="358" y="700" class="spec-label">Latency</text><text x="480" y="700" class="spec-value">&lt; 1 ms (QONTOS accelerated)</text>
+  <text x="358" y="714" class="spec-label">Accuracy</text><text x="480" y="714" class="spec-value">&lt; 2 cm positioning (every seat)</text>
+
+  <!-- Compute -->
+  <rect x="620" y="620" width="260" height="110" rx="5" fill="url(#card-vis)" filter="url(#pv)"/>
+  <rect x="620" y="620" width="260" height="110" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.15"/>
+  <rect x="620" y="620" width="3" height="110" rx="1" fill="#a855f7" opacity="0.2"/>
+  <text x="638" y="636" class="spec-title" fill="#7c3aed">COMPUTE &amp; INTELLIGENCE</text>
+  <text x="638" y="652" class="spec-label">SENTIO</text><text x="760" y="652" class="spec-value">50+ PFLOPS Zhilicon Neural</text>
+  <text x="638" y="664" class="spec-label">Model</text><text x="760" y="664" class="spec-value">1.5T NarrativeTransformer</text>
+  <text x="638" y="676" class="spec-label">Accuracy</text><text x="760" y="676" class="spec-value">98.7% emotion · &lt; 10 ms</text>
+  <text x="638" y="688" class="spec-label">STRATUM</text><text x="760" y="688" class="spec-value">16 depth planes · 8K/layer</text>
+  <text x="638" y="700" class="spec-label">Haptic</text><text x="760" y="700" class="spec-value">AI-generated · All 2,000+ seats</text>
+  <text x="638" y="714" class="spec-label">Storage</text><text x="760" y="714" class="spec-value">8 PB flash array</text>
+
+  <!-- Comparison -->
+  <rect x="900" y="620" width="240" height="110" rx="5" fill="url(#card-vis)" filter="url(#pv)"/>
+  <rect x="900" y="620" width="240" height="110" rx="5" fill="none" stroke="#164e63" stroke-width="0.3" opacity="0.2"/>
+  <rect x="900" y="620" width="3" height="110" rx="1" fill="#22d3ee" opacity="0.3"/>
+  <text x="918" y="636" class="spec-title">vs SPHERE LAS VEGAS</text>
+  <text x="918" y="656" class="spec-label">Sphere</text><text x="1020" y="656" class="spec-value">167K drivers · 16K LED</text>
+  <text x="918" y="668" class="spec-label">  </text><text x="1020" y="668" class="spec-value">18,600 seats · $2.3B</text>
+  <text x="918" y="680" class="spec-label">  </text><text x="1020" y="680" class="spec-value">Fixed immersive content</text>
+  <text x="918" y="698" class="spec-label" fill="#22d3ee">Sylvain</text><text x="1020" y="698" class="spec-value" fill="#22d3ee">168K drivers · AI-adaptive</text>
+  <text x="918" y="710" class="spec-label" fill="#22d3ee">  </text><text x="1020" y="710" class="spec-value" fill="#22d3ee">Every film, not fixed content</text>
+  <text x="918" y="722" class="spec-label" fill="#22d3ee">  </text><text x="1020" y="722" class="spec-value" fill="#22d3ee">SENTIO narrative intelligence</text>
+
+  <!-- Footer -->
+  <rect x="60" y="745" width="1080" height="30" rx="4" fill="url(#card-vis)"/>
+  <rect x="60" y="745" width="1080" height="30" rx="4" fill="none" stroke="#164e63" stroke-width="0.2" opacity="0.15"/>
+  <rect x="60" y="745" width="3" height="30" rx="1" fill="#22d3ee" opacity="0.2"/>
+  <text x="78" y="763" style="font-size:7px; fill:#475569;">VISIONNAIRE venues: Abu Dhabi (HQ) · Barcelona · London · Los Angeles · Mumbai · Paris · Seoul · Shanghai · Singapore · Tokyo</text>
+  <text x="1130" y="763" text-anchor="end" class="eng">Sylvain Technologies Ltd · A Zhyra Ecosystem Venture</text>
+
+  <!-- Summary -->
+  <text x="600" y="800" text-anchor="middle" class="eng">Sphere-class technology adapted for narrative cinema. Comparable in scale to Sphere Las Vegas. Superior in intelligence via SENTIO AI orchestration.</text>
+  <text x="600" y="830" text-anchor="middle" style="font-size:5px; fill:#0c1420; letter-spacing:0.1em;">SYLVAIN VISIONNAIRE · FLAGSHIP SPHERE · VENUE TIER SPECIFICATION · CONFIDENTIAL</text>
+</svg>

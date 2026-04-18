@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <filter id="ge" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0.5 0 0 0  0.4 0.2 0 0 0  0 0 0 0 0  0 0 0 0.25 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pe"><feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="se"><feTurbulence type="fractalNoise" baseFrequency="0 0.4" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.012"/></feComponentTransfer></filter>
+    <filter id="screen-glow-e">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0.4 0 0 0  0.4 0.2 0 0 0  0 0 0 0 0  0 0 0 0.15 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bg-et" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c0806"/><stop offset="100%" stop-color="#080604"/>
+    </linearGradient>
+    <linearGradient id="et-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.15"/><stop offset="100%" stop-color="#9a3412" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="screen-et" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/><stop offset="50%" stop-color="#ea580c" stop-opacity="0.12"/><stop offset="100%" stop-color="#9a3412" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="card-et" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1208" stop-opacity="0.9"/><stop offset="100%" stop-color="#0a0806" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="screen-light-e" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.035"/><stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="seat-glow-e" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.06"/><stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      text { font-family: 'SF Pro Display', -apple-system, 'Inter', system-ui, sans-serif; }
+      .tier-name { font-size: 22px; font-weight: 200; fill: #f97316; letter-spacing: 0.2em; }
+      .tier-sub { font-size: 10px; fill: #9a3412; letter-spacing: 0.15em; text-transform: uppercase; }
+      .spec-title { font-size: 8px; font-weight: 600; fill: #c2410c; letter-spacing: 0.08em; text-transform: uppercase; }
+      .spec-label { font-size: 6.5px; fill: #78716c; }
+      .spec-value { font-size: 7.5px; fill: #fed7aa; font-family: 'SF Mono', monospace; }
+      .dim-label { font-size: 6px; fill: #9a3412; font-family: 'SF Mono', monospace; }
+      .eng { font-size: 5.5px; fill: #57534e; font-family: 'SF Mono', monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" rx="8" fill="url(#bg-et)"/>
+  <rect width="1200" height="800" rx="8" fill="url(#screen-light-e)"/>
+  <rect width="1200" height="800" rx="8" fill="url(#se)" opacity="0.4"/>
+  <rect width="1200" height="800" rx="8" fill="none" stroke="url(#et-edge)" stroke-width="0.8"/>
+  <line x1="18" y1="8" x2="18" y2="28" stroke="#ea580c" stroke-width="0.8" opacity="0.15"/>
+  <line x1="8" y1="18" x2="28" y2="18" stroke="#ea580c" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Header -->
+  <text x="600" y="42" text-anchor="middle" class="tier-sub">MASS PREMIUM</text>
+  <text x="600" y="72" text-anchor="middle" class="tier-name" filter="url(#ge)">SYLVAIN ETOILEE</text>
+  <line x1="380" y1="82" x2="820" y2="82" stroke="url(#et-edge)" stroke-width="0.4"/>
+  <text x="600" y="98" text-anchor="middle" style="font-size:8px; fill:#78716c;">650+ seats  ·  Retrofit-friendly architecture  ·  B2B licensable to theater chains  ·  100% premium seats vs 20% traditional</text>
+
+  <!-- ═══ STANDARD AUDITORIUM CROSS-SECTION (retrofit-friendly) ═══ -->
+
+  <!-- Flat ceiling -->
+  <line x1="150" y1="170" x2="1050" y2="170" stroke="#1a1208" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- Walls -->
+  <line x1="150" y1="170" x2="150" y2="460" stroke="#1a1208" stroke-width="0.5" opacity="0.3"/>
+  <line x1="1050" y1="170" x2="1050" y2="460" stroke="#1a1208" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Floor (sloped — standard cinema rake) -->
+  <path d="M 150 460 L 1050 430" stroke="#1a1208" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- Flat MicroLED screen (8K — not curved, retrofit-friendly) -->
+  <rect x="220" y="178" width="760" height="180" rx="2" fill="url(#screen-et)" filter="url(#screen-glow-e)"/>
+  <rect x="220" y="178" width="760" height="180" rx="2" fill="none" stroke="#f97316" stroke-width="0.8" opacity="0.25"/>
+  <text x="600" y="345" text-anchor="middle" style="font-size:6px; fill:#ea580c; opacity:0.25; letter-spacing:0.1em; font-family:SF Mono,monospace;">8K MicroLED  ·  6,000 NITS  ·  INFINITE CONTRAST  ·  170° UNIFORM  ·  120 Hz</text>
+
+  <!-- Screen light spill -->
+  <ellipse cx="600" cy="390" rx="320" ry="60" fill="url(#seat-glow-e)" opacity="0.5"/>
+
+  <!-- Content hint -->
+  <g opacity="0.012" stroke="#f97316" stroke-width="0.3">
+    <line x1="240" y1="210" x2="960" y2="210"/><line x1="240" y1="225" x2="960" y2="225"/>
+    <line x1="240" y1="240" x2="960" y2="240"/><line x1="240" y1="255" x2="960" y2="255"/>
+    <line x1="240" y1="270" x2="960" y2="270"/><line x1="240" y1="285" x2="960" y2="285"/>
+    <line x1="240" y1="300" x2="960" y2="300"/><line x1="240" y1="315" x2="960" y2="315"/>
+    <line x1="240" y1="330" x2="960" y2="330"/>
+  </g>
+
+  <!-- Speaker arrays (wall-mounted, retrofit-friendly) -->
+  <g opacity="0.08">
+    <rect x="152" y="175" width="4" height="280" fill="#0891b2"/>
+    <rect x="1044" y="175" width="4" height="280" fill="#0891b2"/>
+    <rect x="220" y="168" width="760" height="3" fill="#0891b2"/>
+  </g>
+
+  <!-- 650+ seats (standard cinema seating — NOT suites, wider rows) -->
+  <g opacity="0.35">
+    <rect x="200" y="375" width="800" height="5" rx="1" fill="#f97316" opacity="0.03"/>
+    <rect x="205" y="384" width="790" height="5" rx="1" fill="#f97316" opacity="0.028"/>
+    <rect x="210" y="393" width="780" height="5" rx="1" fill="#f97316" opacity="0.026"/>
+    <rect x="215" y="402" width="770" height="5" rx="1" fill="#f97316" opacity="0.024"/>
+    <rect x="220" y="411" width="760" height="5" rx="1" fill="#f97316" opacity="0.022"/>
+    <rect x="225" y="420" width="750" height="5" rx="1" fill="#f97316" opacity="0.02"/>
+    <rect x="230" y="428" width="740" height="5" rx="1" fill="#f97316" opacity="0.018"/>
+    <rect x="235" y="436" width="730" height="5" rx="1" fill="#f97316" opacity="0.016"/>
+    <rect x="240" y="443" width="720" height="5" rx="1" fill="#f97316" opacity="0.014"/>
+    <rect x="245" y="450" width="710" height="5" rx="1" fill="#f97316" opacity="0.012"/>
+  </g>
+
+  <text x="600" y="472" text-anchor="middle" style="font-size:6px; fill:#9a3412; opacity:0.4; letter-spacing:0.06em; font-family:SF Mono,monospace;">650+ SEATS  ·  ALL DELIVER 6,000 NITS + 256-CH WFS  ·  100% PREMIUM QUALITY (vs 20% TRADITIONAL)</text>
+
+  <!-- Dimension annotations -->
+  <line x1="150" y1="485" x2="1050" y2="485" stroke="#9a3412" stroke-width="0.3" opacity="0.2"/>
+  <text x="600" y="498" text-anchor="middle" class="dim-label">30 m (standard PLF width — retrofit compatible)</text>
+
+  <!-- RETROFIT BADGE -->
+  <rect x="480" y="505" width="240" height="24" rx="12" fill="url(#card-et)" stroke="#22c55e" stroke-width="0.4" opacity="0.5"/>
+  <text x="600" y="521" text-anchor="middle" style="font-size:7px; fill:#86efac; letter-spacing:0.06em; font-family:SF Mono,monospace;">RETROFIT-FRIENDLY ARCHITECTURE</text>
+
+  <!-- ═══ SPECIFICATION PANELS ═══ -->
+
+  <rect x="60" y="545" width="260" height="110" rx="5" fill="url(#card-et)" filter="url(#pe)"/>
+  <rect x="60" y="545" width="260" height="110" rx="5" fill="none" stroke="#9a3412" stroke-width="0.3" opacity="0.2"/>
+  <rect x="60" y="545" width="3" height="110" rx="1" fill="#f97316" opacity="0.3"/>
+  <text x="78" y="562" class="spec-title">SPECTRA DISPLAY</text>
+  <text x="78" y="578" class="spec-label">Technology</text><text x="200" y="578" class="spec-value">8K MicroLED (7680 x 4320)</text>
+  <text x="78" y="590" class="spec-label">Brightness</text><text x="200" y="590" class="spec-value">6,000 nits · Infinite contrast</text>
+  <text x="78" y="602" class="spec-label">Viewing</text><text x="200" y="602" class="spec-value">170° uniform quality</text>
+  <text x="78" y="614" class="spec-label">Refresh</text><text x="200" y="614" class="spec-value">120 Hz · 12-bit · Rec.2020</text>
+  <text x="78" y="626" class="spec-label">Sweet Spot</text><text x="200" y="626" class="spec-value">100% (vs 20% traditional PLF)</text>
+  <text x="78" y="640" class="spec-label">Installation</text><text x="200" y="640" class="spec-value">Retrofit-friendly (no projector room)</text>
+
+  <rect x="340" y="545" width="260" height="110" rx="5" fill="url(#card-et)" filter="url(#pe)"/>
+  <rect x="340" y="545" width="260" height="110" rx="5" fill="none" stroke="#0e7490" stroke-width="0.3" opacity="0.15"/>
+  <rect x="340" y="545" width="3" height="110" rx="1" fill="#06b6d4" opacity="0.25"/>
+  <text x="358" y="562" class="spec-title" fill="#0891b2">ADAPTIVE WFS AUDIO</text>
+  <text x="358" y="578" class="spec-label">System</text><text x="480" y="578" class="spec-value">Adaptive WFS</text>
+  <text x="358" y="590" class="spec-label">Channels</text><text x="480" y="590" class="spec-value">256 discrete</text>
+  <text x="358" y="602" class="spec-label">Drivers</text><text x="480" y="602" class="spec-value">4,000+ (6.2 per seat)</text>
+  <text x="358" y="614" class="spec-label">Range</text><text x="480" y="614" class="spec-value">150 dB · 10 Hz - 40 kHz</text>
+  <text x="358" y="626" class="spec-label">Latency</text><text x="480" y="626" class="spec-value">&lt; 1 ms end-to-end</text>
+  <text x="358" y="640" class="spec-label">Array</text><text x="480" y="640" class="spec-value">Linear wall-mounted (retrofit)</text>
+
+  <rect x="620" y="545" width="260" height="110" rx="5" fill="url(#card-et)" filter="url(#pe)"/>
+  <rect x="620" y="545" width="260" height="110" rx="5" fill="none" stroke="#22c55e" stroke-width="0.3" opacity="0.15"/>
+  <rect x="620" y="545" width="3" height="110" rx="1" fill="#22c55e" opacity="0.25"/>
+  <text x="638" y="562" class="spec-title" fill="#16a34a">B2B LICENSING MODEL</text>
+  <text x="638" y="578" class="spec-label">Model</text><text x="760" y="578" class="spec-value">Technology licensing to chains</text>
+  <text x="638" y="590" class="spec-label">Traditional</text><text x="760" y="590" class="spec-value">~20% premium seats (sweet spot)</text>
+  <text x="638" y="602" class="spec-label">Etoilee</text><text x="760" y="602" class="spec-value" style="fill:#86efac;">100% premium seats (universal)</text>
+  <text x="638" y="614" class="spec-label">Yield</text><text x="760" y="614" class="spec-value" style="fill:#86efac;">3-5x improvement</text>
+  <text x="638" y="626" class="spec-label">Market</text><text x="760" y="626" class="spec-value">$95.66B by 2032</text>
+  <text x="638" y="640" class="spec-label">Targets</text><text x="760" y="640" class="spec-value">1,600+ IMAX · 10K+ Atmos screens</text>
+
+  <rect x="900" y="545" width="240" height="110" rx="5" fill="url(#card-et)" filter="url(#pe)"/>
+  <rect x="900" y="545" width="240" height="110" rx="5" fill="none" stroke="#9a3412" stroke-width="0.3" opacity="0.2"/>
+  <rect x="900" y="545" width="3" height="110" rx="1" fill="#ea580c" opacity="0.25"/>
+  <text x="918" y="562" class="spec-title">vs IMAX / DOLBY</text>
+  <text x="918" y="582" class="spec-label">IMAX</text><text x="1020" y="582" class="spec-value">22 nits · 20% sweet spot</text>
+  <text x="918" y="594" class="spec-label">Dolby</text><text x="1020" y="594" class="spec-value">31 nits · 25% sweet spot</text>
+  <text x="918" y="612" class="spec-label" style="fill:#f97316;">Etoilee</text><text x="1020" y="612" class="spec-value" style="fill:#f97316;">6,000 nits · 100% sweet spot</text>
+  <text x="918" y="630" class="spec-label" style="fill:#86efac;">Advantage</text><text x="1020" y="630" class="spec-value" style="fill:#86efac;">193x brighter than IMAX</text>
+  <text x="918" y="642" class="spec-label" style="fill:#86efac;"> </text><text x="1020" y="642" class="spec-value" style="fill:#86efac;">5x more premium seats</text>
+
+  <!-- Footer -->
+  <rect x="60" y="670" width="1080" height="28" rx="4" fill="url(#card-et)"/>
+  <rect x="60" y="670" width="1080" height="28" rx="4" fill="none" stroke="#9a3412" stroke-width="0.2" opacity="0.15"/>
+  <rect x="60" y="670" width="3" height="28" rx="1" fill="#ea580c" opacity="0.2"/>
+  <text x="78" y="688" style="font-size:7px; fill:#78716c;">ETOILEE: Licensable technology for major theater chains. Retrofit-friendly. Eliminates the sweet spot entirely. 3-5x yield improvement.</text>
+  <text x="1130" y="688" text-anchor="end" class="eng">Sylvain Technologies Ltd</text>
+
+  <text x="600" y="730" text-anchor="middle" class="eng">Every seat delivers 6,000 nit · infinite contrast · 256-channel holographic audio · AI narrative orchestration · 100% premium quality</text>
+  <text x="600" y="780" text-anchor="middle" style="font-size:5px; fill:#1a1208; letter-spacing:0.1em;">SYLVAIN ETOILEE · MASS PREMIUM · VENUE TIER SPECIFICATION · CONFIDENTIAL</text>
+</svg>

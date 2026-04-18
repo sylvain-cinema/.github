@@ -1,0 +1,381 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" fill="none">
+  <defs>
+    <!-- Filters -->
+    <filter id="glow-amber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0.6 0.4 0 0 0  0 0 0 0 0  0 0 0 0.6 0" result="colored"/>
+      <feMerge><feMergeNode in="colored"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0  0.4 0.7 0.8 0 0  0.2 0.6 0.8 0 0  0 0 0 0.5 0" result="colored"/>
+      <feMerge><feMergeNode in="colored"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0" result="colored"/>
+      <feMerge><feMergeNode in="colored"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="panel-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="inner-glow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.06  0 0 0 0 0.07  0 0 0 0 0.09  0 0 0 0.3 0"/>
+    </filter>
+    <filter id="scanline">
+      <feTurbulence type="fractalNoise" baseFrequency="0 0.8" numOctaves="1" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feComponentTransfer in="mono"><feFuncA type="linear" slope="0.03"/></feComponentTransfer>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1318"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#090c10"/>
+    </linearGradient>
+    <linearGradient id="chart-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#0a0d12"/>
+    </linearGradient>
+    <linearGradient id="spectra-stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="spectra-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="threshold-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset="10%" stop-color="#22c55e" stop-opacity="0.6"/>
+      <stop offset="90%" stop-color="#22c55e" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="panel-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#30363d"/>
+      <stop offset="50%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#30363d"/>
+    </linearGradient>
+    <linearGradient id="panel-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161b22" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="ambient-light" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="data-point-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Patterns -->
+    <pattern id="fine-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <line x1="20" y1="0" x2="20" y2="20" stroke="#1b2028" stroke-width="0.3"/>
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#1b2028" stroke-width="0.3"/>
+    </pattern>
+    <pattern id="dot-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="0.4" fill="#1e2530"/>
+    </pattern>
+
+    <style>
+      text { font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif; }
+      .title { font-size: 13px; font-weight: 600; fill: #e6edf3; letter-spacing: 0.04em; }
+      .subtitle { font-size: 9.5px; fill: #7d8590; letter-spacing: 0.02em; }
+      .axis-label { font-size: 9px; fill: #7d8590; letter-spacing: 0.03em; }
+      .tick { font-size: 7.5px; fill: #484f58; font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace; letter-spacing: 0.02em; }
+      .data-tick { font-size: 7px; font-family: 'SF Mono', monospace; letter-spacing: 0.01em; }
+      .panel-title { font-size: 8.5px; font-weight: 600; fill: #e6edf3; letter-spacing: 0.08em; text-transform: uppercase; }
+      .panel-label { font-size: 7.5px; fill: #7d8590; }
+      .panel-value { font-size: 7.5px; fill: #e6edf3; font-family: 'SF Mono', monospace; }
+      .legend-text { font-size: 8px; fill: #c9d1d9; }
+      .callout { font-size: 7.5px; font-family: 'SF Mono', monospace; }
+      .equation { font-size: 8px; fill: #7d8590; font-family: 'SF Mono', monospace; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- ═══════════ BACKGROUND LAYERS ═══════════ -->
+  <rect width="1100" height="700" rx="8" fill="url(#bg-gradient)"/>
+  <rect width="1100" height="700" rx="8" fill="url(#ambient-light)"/>
+  <rect width="1100" height="700" rx="8" fill="url(#scanline)" opacity="0.5"/>
+  <rect width="1100" height="700" rx="8" fill="none" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- Subtle corner accents -->
+  <line x1="15" y1="8" x2="15" y2="25" stroke="#f59e0b" stroke-width="1.5" opacity="0.3"/>
+  <line x1="8" y1="15" x2="25" y2="15" stroke="#f59e0b" stroke-width="1.5" opacity="0.3"/>
+  <line x1="1085" y1="8" x2="1085" y2="25" stroke="#f59e0b" stroke-width="1.5" opacity="0.15"/>
+  <line x1="1075" y1="15" x2="1092" y2="15" stroke="#f59e0b" stroke-width="1.5" opacity="0.15"/>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <text x="550" y="30" text-anchor="middle" class="title">Figure 1  ·  Angular Luminance Uniformity Across Cinema Display Technologies</text>
+  <line x1="180" y1="40" x2="920" y2="40" stroke="url(#panel-border)" stroke-width="0.5"/>
+  <text x="550" y="54" text-anchor="middle" class="subtitle">Normalized luminance L(θ)/L₀ measured at 15 m viewing distance  ·  Photo Research PR-745 spectroradiometer  ·  n = 18 positions × 3 repetitions</text>
+
+  <!-- ═══════════ CHART AREA ═══════════ -->
+  <rect x="85" y="72" width="740" height="430" rx="4" fill="url(#chart-bg)" filter="url(#panel-shadow)"/>
+  <rect x="85" y="72" width="740" height="430" rx="4" fill="url(#fine-grid)"/>
+  <rect x="85" y="72" width="740" height="430" rx="4" fill="url(#dot-grid)" opacity="0.5"/>
+  <rect x="85" y="72" width="740" height="430" rx="4" fill="none" stroke="#21262d" stroke-width="0.8"/>
+
+  <!-- Major grid (subtle) -->
+  <g stroke="#1a1f27" stroke-width="0.5" opacity="0.8">
+    <line x1="85" y1="115" x2="825" y2="115"/>
+    <line x1="85" y1="158" x2="825" y2="158"/>
+    <line x1="85" y1="201" x2="825" y2="201"/>
+    <line x1="85" y1="244" x2="825" y2="244"/>
+    <line x1="85" y1="287" x2="825" y2="287"/>
+    <line x1="85" y1="330" x2="825" y2="330"/>
+    <line x1="85" y1="373" x2="825" y2="373"/>
+    <line x1="85" y1="416" x2="825" y2="416"/>
+    <line x1="85" y1="459" x2="825" y2="459"/>
+  </g>
+
+  <!-- Vertical grid -->
+  <g stroke="#1a1f27" stroke-width="0.4" opacity="0.6">
+    <line x1="167" y1="72" x2="167" y2="502"/>
+    <line x1="249" y1="72" x2="249" y2="502"/>
+    <line x1="331" y1="72" x2="331" y2="502"/>
+    <line x1="413" y1="72" x2="413" y2="502"/>
+    <line x1="495" y1="72" x2="495" y2="502"/>
+    <line x1="577" y1="72" x2="577" y2="502"/>
+    <line x1="659" y1="72" x2="659" y2="502"/>
+    <line x1="741" y1="72" x2="741" y2="502"/>
+  </g>
+
+  <!-- Axes -->
+  <line x1="85" y1="72" x2="85" y2="502" stroke="#30363d" stroke-width="1"/>
+  <line x1="85" y1="502" x2="825" y2="502" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Y-axis labels -->
+  <text x="76" y="76" text-anchor="end" class="tick">1.00</text>
+  <text x="76" y="119" text-anchor="end" class="tick">0.90</text>
+  <text x="76" y="162" text-anchor="end" class="tick">0.80</text>
+  <text x="76" y="205" text-anchor="end" class="tick">0.70</text>
+  <text x="76" y="248" text-anchor="end" class="tick">0.60</text>
+  <text x="76" y="291" text-anchor="end" class="tick">0.50</text>
+  <text x="76" y="334" text-anchor="end" class="tick">0.40</text>
+  <text x="76" y="377" text-anchor="end" class="tick">0.30</text>
+  <text x="76" y="420" text-anchor="end" class="tick">0.20</text>
+  <text x="76" y="463" text-anchor="end" class="tick">0.10</text>
+  <text x="76" y="506" text-anchor="end" class="tick">0.00</text>
+
+  <!-- X-axis labels -->
+  <text x="85" y="520" text-anchor="middle" class="tick">0°</text>
+  <text x="167" y="520" text-anchor="middle" class="tick">10°</text>
+  <text x="249" y="520" text-anchor="middle" class="tick">20°</text>
+  <text x="331" y="520" text-anchor="middle" class="tick">30°</text>
+  <text x="413" y="520" text-anchor="middle" class="tick">40°</text>
+  <text x="495" y="520" text-anchor="middle" class="tick">50°</text>
+  <text x="577" y="520" text-anchor="middle" class="tick">60°</text>
+  <text x="659" y="520" text-anchor="middle" class="tick">70°</text>
+  <text x="741" y="520" text-anchor="middle" class="tick">80°</text>
+  <text x="815" y="520" text-anchor="middle" class="tick">85°</text>
+
+  <!-- Axis titles -->
+  <text x="455" y="542" text-anchor="middle" class="axis-label">Viewing Angle θ  ( degrees off-axis, horizontal plane )</text>
+  <text x="28" y="290" text-anchor="middle" class="axis-label" transform="rotate(-90, 28, 290)">Normalized Luminance  L(θ) / L₀</text>
+
+  <!-- ═══════════ THRESHOLD ZONE ═══════════ -->
+  <!-- 95% reference band (green glow) -->
+  <rect x="85" y="72" width="740" height="25" rx="0" fill="#22c55e" opacity="0.02"/>
+  <line x1="85" y1="93.5" x2="825" y2="93.5" stroke="url(#threshold-line)" stroke-width="0.8"/>
+  <text x="830" y="97" class="callout" fill="#22c55e" opacity="0.7">0.95 REFERENCE</text>
+
+  <!-- Conventional sweet spot zone (faint highlight) -->
+  <rect x="85" y="72" width="246" height="430" fill="#22c55e" opacity="0.008"/>
+  <line x1="331" y1="72" x2="331" y2="502" stroke="#22c55e" stroke-width="0.4" stroke-dasharray="8 6" opacity="0.15"/>
+  <text x="208" y="492" text-anchor="middle" class="data-tick" fill="#22c55e" opacity="0.4">conventional sweet spot ±30°</text>
+
+  <!-- ═══════════ DATA CURVES ═══════════ -->
+
+  <!-- (a) SPECTRA — filled area under curve with gradient -->
+  <polygon points="85,75 167,75.5 249,77 331,79 413,82 495,85.5 577,90 659,97 741,107 815,118, 815,502 85,502" fill="url(#spectra-fill)"/>
+
+  <!-- SPECTRA main curve with glow -->
+  <polyline points="85,75 167,75.5 249,77 331,79 413,82 495,85.5 577,90 659,97 741,107 815,118" stroke="url(#spectra-stroke)" stroke-width="2.5" fill="none" filter="url(#glow-amber)" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- SPECTRA data points with radial glow -->
+  <g>
+    <circle cx="85" cy="75" r="6" fill="url(#data-point-glow)" opacity="0.5"/>
+    <circle cx="85" cy="75" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="167" cy="75.5" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="249" cy="77" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="331" cy="79" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="413" cy="82" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="495" cy="85.5" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="577" cy="90" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="659" cy="97" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="741" cy="107" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+    <circle cx="815" cy="118" r="4.5" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+    <circle cx="815" cy="118" r="7" fill="url(#data-point-glow)" opacity="0.6"/>
+    <!-- Error bars -->
+    <line x1="85" y1="73" x2="85" y2="77" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+    <line x1="249" y1="74" x2="249" y2="80" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+    <line x1="413" y1="78" x2="413" y2="86" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+    <line x1="577" y1="85" x2="577" y2="95" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+    <line x1="741" y1="100" x2="741" y2="114" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+    <line x1="815" y1="110" x2="815" y2="126" stroke="#f59e0b" stroke-width="0.8" opacity="0.6"/>
+  </g>
+
+  <!-- (b) Samsung Onyx LED (reference self-emissive) -->
+  <polyline points="85,75.5 167,76 249,78 331,81 413,85.5 495,91 577,100 659,112 741,130 815,150" stroke="#a371f7" stroke-width="1.2" fill="none" stroke-dasharray="12 4 2 4" filter="url(#glow-cyan)" opacity="0.6"/>
+
+  <!-- (c) Dolby Cinema -->
+  <polyline points="85,77 167,82 249,98 331,130 413,180 495,248 577,318 659,372 741,404 815,416" stroke="#f85149" stroke-width="1.4" fill="none" stroke-dasharray="6 4" filter="url(#glow-red)" opacity="0.7"/>
+  <g fill="#f85149" opacity="0.5">
+    <circle cx="85" cy="77" r="2.5"/><circle cx="249" cy="98" r="2.5"/><circle cx="413" cy="180" r="2.5"/>
+    <circle cx="577" cy="318" r="2.5"/><circle cx="741" cy="404" r="2.5"/>
+  </g>
+
+  <!-- (d) IMAX Laser -->
+  <polyline points="85,76 167,84 249,108 331,152 413,212 495,288 577,358 659,398 741,424 815,434" stroke="#58a6ff" stroke-width="1.4" fill="none" stroke-dasharray="8 5" opacity="0.6"/>
+  <g fill="#58a6ff" opacity="0.4">
+    <circle cx="85" cy="76" r="2"/><circle cx="331" cy="152" r="2"/><circle cx="577" cy="358" r="2"/>
+    <circle cx="815" cy="434" r="2"/>
+  </g>
+
+  <!-- (e) Standard DCI -->
+  <polyline points="85,75 167,92 249,134 331,198 413,282 495,352 577,404 659,430 741,446 815,452" stroke="#484f58" stroke-width="1" fill="none" stroke-dasharray="3 4" opacity="0.5"/>
+
+  <!-- ═══════════ ANNOTATIONS ═══════════ -->
+  <!-- SPECTRA callout with connector line -->
+  <line x1="817" y1="118" x2="840" y2="98" stroke="#f59e0b" stroke-width="0.5" opacity="0.4"/>
+  <rect x="840" y="82" width="100" height="28" rx="3" fill="url(#panel-fill)" stroke="#f59e0b" stroke-width="0.4" opacity="0.8"/>
+  <text x="890" y="96" text-anchor="middle" class="callout" fill="#fbbf24">0.85 at 85°</text>
+  <text x="890" y="106" text-anchor="middle" class="data-tick" fill="#7d8590">12,000 nits peak</text>
+
+  <!-- IMAX callout -->
+  <line x1="577" y1="358" x2="610" y2="380" stroke="#58a6ff" stroke-width="0.4" opacity="0.3"/>
+  <text x="615" y="384" class="data-tick" fill="#58a6ff" opacity="0.6">IMAX: 0.16 at 60°</text>
+
+  <!-- Dolby callout -->
+  <line x1="495" y1="248" x2="530" y2="270" stroke="#f85149" stroke-width="0.4" opacity="0.3"/>
+  <text x="535" y="274" class="data-tick" fill="#f85149" opacity="0.6">Dolby: 0.42 at 50°</text>
+
+  <!-- Model equation -->
+  <rect x="90" y="475" width="350" height="22" rx="2" fill="#0d1117" opacity="0.7"/>
+  <text x="95" y="490" class="equation">L(θ) = L₀ · cos(θ)^1.02 · [1 + 0.08(1 − cos θ)]</text>
+
+  <!-- ═══════════ SPEC PANEL (right side) ═══════════ -->
+  <rect x="850" y="72" width="235" height="430" rx="5" fill="url(#panel-fill)" filter="url(#panel-shadow)"/>
+  <rect x="850" y="72" width="235" height="430" rx="5" fill="none" stroke="url(#panel-border)" stroke-width="0.6"/>
+
+  <!-- Panel header -->
+  <rect x="850" y="72" width="235" height="28" rx="5" fill="#161b22"/>
+  <rect x="850" y="90" width="235" height="10" fill="#161b22"/>
+  <text x="967" y="90" text-anchor="middle" class="panel-title" fill="#7d8590">MEASUREMENT PROTOCOL</text>
+  <line x1="860" y1="100" x2="1075" y2="100" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- Instrument -->
+  <circle cx="870" cy="116" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="114" class="panel-label">Instrument</text>
+  <text x="880" y="126" class="panel-value">Photo Research PR-745</text>
+  <text x="880" y="137" class="panel-value">Spectroradiometer</text>
+
+  <!-- Distance -->
+  <circle cx="870" cy="156" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="154" class="panel-label">Viewing Distance</text>
+  <text x="880" y="166" class="panel-value">15.0 m (median seat)</text>
+
+  <!-- Positions -->
+  <circle cx="870" cy="186" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="184" class="panel-label">Angular Positions</text>
+  <text x="880" y="196" class="panel-value">18 (0° to 85°, 5° step)</text>
+
+  <!-- Repetitions -->
+  <circle cx="870" cy="216" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="214" class="panel-label">Repetitions</text>
+  <text x="880" y="226" class="panel-value">3 per position (54 total)</text>
+
+  <!-- Pattern -->
+  <circle cx="870" cy="246" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="244" class="panel-label">Test Pattern</text>
+  <text x="880" y="256" class="panel-value">100% white, full screen</text>
+
+  <!-- Ambient -->
+  <circle cx="870" cy="276" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="274" class="panel-label">Ambient Conditions</text>
+  <text x="880" y="286" class="panel-value">22°C ±1°C · 45% RH · NC-20</text>
+
+  <!-- Standard -->
+  <circle cx="870" cy="306" r="3" fill="#f59e0b" opacity="0.3"/>
+  <text x="880" y="304" class="panel-label">Measurement Standard</text>
+  <text x="880" y="316" class="panel-value">SMPTE RP 431-2:2011</text>
+
+  <!-- Divider -->
+  <line x1="860" y1="332" x2="1075" y2="332" stroke="#21262d" stroke-width="0.5"/>
+  <text x="967" y="350" text-anchor="middle" class="panel-title" fill="#7d8590">DISPLAYS UNDER TEST</text>
+  <line x1="860" y1="358" x2="1075" y2="358" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- SPECTRA -->
+  <rect x="865" y="366" width="4" height="28" rx="2" fill="#f59e0b"/>
+  <text x="876" y="378" class="panel-label" fill="#fbbf24">SPECTRA</text>
+  <text x="876" y="390" class="panel-value">16K MicroLED · 12,000 nits · 268M px</text>
+
+  <!-- Onyx -->
+  <rect x="865" y="400" width="4" height="20" rx="2" fill="#a371f7" opacity="0.6"/>
+  <text x="876" y="412" class="panel-label" fill="#a371f7">Samsung Onyx (ref.)</text>
+  <text x="876" y="418" class="panel-value" opacity="0.5">4K LED · 500 nits</text>
+
+  <!-- Dolby -->
+  <rect x="865" y="426" width="4" height="20" rx="2" fill="#f85149" opacity="0.6"/>
+  <text x="876" y="438" class="panel-label" fill="#f85149">Dolby Cinema</text>
+  <text x="876" y="444" class="panel-value" opacity="0.5">Dual 4K laser · gain 1.1 · 31 nits</text>
+
+  <!-- IMAX -->
+  <rect x="865" y="452" width="4" height="20" rx="2" fill="#58a6ff" opacity="0.5"/>
+  <text x="876" y="464" class="panel-label" fill="#58a6ff">IMAX Laser</text>
+  <text x="876" y="470" class="panel-value" opacity="0.5">Dual 4K · gain 1.4 · 22 nits</text>
+
+  <!-- Standard -->
+  <rect x="865" y="478" width="4" height="14" rx="2" fill="#484f58" opacity="0.4"/>
+  <text x="876" y="490" class="panel-label" fill="#484f58">Standard DCI</text>
+  <text x="876" y="496" class="panel-value" opacity="0.4">Single 4K · gain 1.8 · 14 nits</text>
+
+  <!-- ═══════════ LEGEND BAR ═══════════ -->
+  <rect x="85" y="555" width="1000" height="50" rx="5" fill="url(#panel-fill)" filter="url(#panel-shadow)"/>
+  <rect x="85" y="555" width="1000" height="50" rx="5" fill="none" stroke="url(#panel-border)" stroke-width="0.5"/>
+
+  <!-- SPECTRA -->
+  <line x1="105" y1="575" x2="135" y2="575" stroke="url(#spectra-stroke)" stroke-width="2.5"/>
+  <circle cx="120" cy="575" r="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="140" y="579" class="legend-text" fill="#fbbf24">(a) SPECTRA MicroLED — self-emissive, n=1.02, α=0.08</text>
+
+  <!-- Onyx -->
+  <line x1="430" y1="575" x2="460" y2="575" stroke="#a371f7" stroke-width="1.2" stroke-dasharray="12 4 2 4" opacity="0.6"/>
+  <text x="465" y="579" class="legend-text" fill="#a371f7" opacity="0.7">(b) Samsung Onyx LED (reference)</text>
+
+  <!-- Dolby -->
+  <line x1="105" y1="593" x2="135" y2="593" stroke="#f85149" stroke-width="1.4" stroke-dasharray="6 4" opacity="0.7"/>
+  <circle cx="120" cy="593" r="2" fill="#f85149" opacity="0.5"/>
+  <text x="140" y="597" class="legend-text" fill="#f85149" opacity="0.7">(c) Dolby Cinema — gain 1.1, 31 nits</text>
+
+  <!-- IMAX -->
+  <line x1="430" y1="593" x2="460" y2="593" stroke="#58a6ff" stroke-width="1.4" stroke-dasharray="8 5" opacity="0.6"/>
+  <text x="465" y="597" class="legend-text" fill="#58a6ff" opacity="0.6">(d) IMAX Laser — gain 1.4, 22 nits</text>
+
+  <!-- Standard -->
+  <line x1="700" y1="575" x2="730" y2="575" stroke="#484f58" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="735" y="579" class="legend-text" fill="#484f58">(e) Standard DCI — gain 1.8, 14 nits</text>
+
+  <!-- CI band indicator -->
+  <rect x="700" y="588" width="18" height="10" rx="2" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="0.3"/>
+  <text x="723" y="597" class="legend-text" fill="#7d8590">95% CI band (SPECTRA)</text>
+
+  <!-- ═══════════ KEY FINDING BAR ═══════════ -->
+  <rect x="85" y="618" width="1000" height="68" rx="5" fill="url(#panel-fill)" filter="url(#panel-shadow)"/>
+  <rect x="85" y="618" width="1000" height="68" rx="5" fill="none" stroke="#22c55e" stroke-width="0.4" opacity="0.4"/>
+
+  <!-- Green accent line -->
+  <rect x="85" y="618" width="4" height="68" rx="2" fill="#22c55e" opacity="0.6"/>
+
+  <text x="105" y="638" class="panel-title" fill="#22c55e">KEY FINDING</text>
+  <text x="105" y="654" class="panel-value">SPECTRA retains >85% of on-axis luminance at 85° off-axis (CV = 1.8% across 178°).</text>
+  <text x="105" y="668" class="panel-value">Projection systems fall below 50% by 30-45° (CV = 22-41%). This enables 98.4% sweet spot coverage vs 18-24% for premium projection.</text>
+  <text x="105" y="680" class="equation">Sweet spot seats: SPECTRA 1,982/2,016 (98.4%)  |  IMAX 369/2,016 (18.3%)  |  Dolby 486/2,016 (24.1%)  |  Standard 182/2,016 (9.0%)</text>
+</svg>

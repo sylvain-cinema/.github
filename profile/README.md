@@ -31,6 +31,68 @@ Sylvain is building cinema technology that eliminates the sweet spot problem —
 
 <br/>
 
+## System Architecture
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/figures/fig4-system-architecture.svg" alt="Sylvain System Architecture" width="100%"/>
+</div>
+
+<br/>
+
+## Sweet Spot Elimination
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/figures/fig1-angular-luminance.svg" alt="Angular Luminance — SPECTRA vs Projection" width="100%"/>
+</div>
+
+<br/>
+
+## Holographic Audio: WFS vs Dolby Atmos
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/figures/fig2-wfs-vs-vbap-field.svg" alt="WFS vs VBAP Sound Field" width="100%"/>
+</div>
+
+<br/>
+
+---
+
+## Venue Tiers
+
+### SANCTUM — The Pinnacle
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/venue-tiers/sanctum.svg" alt="SANCTUM — Ultra-Exclusive Private Cinema" width="100%"/>
+</div>
+
+<br/>
+
+### VISIONNAIRE — Flagship Sphere
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/venue-tiers/visionnaire.svg" alt="VISIONNAIRE — Flagship Sphere Venue" width="100%"/>
+</div>
+
+<br/>
+
+### ETOILEE — Mass Premium
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/venue-tiers/etoilee.svg" alt="ETOILEE — Mass Premium, B2B Licensable" width="100%"/>
+</div>
+
+<br/>
+
+### ATELIER — Creator Suite
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/sylvain-cinema/.github/main/profile/assets/venue-tiers/atelier.svg" alt="ATELIER — Content Creation Tools" width="100%"/>
+</div>
+
+<br/>
+
+---
+
 ## Core Technology
 
 <table>
@@ -89,7 +151,7 @@ Volumetric display with 16 transparent depth planes at 8K per layer. Glasses-fre
 **[QONTOS Engine](https://github.com/sylvain-cinema/qontos-engine)**
 <sub>Quantum Computing</sub>
 
-Quantum-accelerated WFS computation. 65.5M-element matrix solving at sub-millisecond latency for real-time holographic audio.
+Quantum-accelerated WFS computation. 344M-element matrix solving at sub-millisecond latency for real-time holographic audio.
 
 `Rust` `CUDA`
 
@@ -148,19 +210,8 @@ Every seat as an NFT with dynamic metadata. On-chain booking, demand-based prici
 
 | Repository | Description |
 |:-----------|:------------|
-| [**research**](https://github.com/sylvain-cinema/research) | Technical papers, specifications, architecture decision records, competitive analysis |
+| [**research**](https://github.com/sylvain-cinema/research) | 10 technical papers, specifications, architecture decision records, competitive analysis |
 | [**docs**](https://github.com/sylvain-cinema/sylvain.github.io) | Developer documentation portal with API reference, integration guides |
-
-<br/>
-
-## Venue Formats
-
-| Format | Capacity | Display | Audio | Purpose |
-|:-------|:---------|:--------|:------|:--------|
-| **SANCTUM** | 100 seats | 16K MicroLED, 15,000 nits | 512 channels, 8,000 drivers | Ultra-exclusive private cinema |
-| **VISIONNAIRE** | 2,000+ seats | 16K x 16K, 12,000 nits | 2,048 channels, 168,000 drivers | Flagship sphere-class venues |
-| **ETOILEE** | 650+ seats | 8K MicroLED, 6,000 nits | 256 channels, 4,000 drivers | Mass premium, licensable to chains |
-| **ATELIER** | Variable | Up to 16K | Sentio Suite | B2B content creation tools |
 
 <br/>
 
@@ -173,8 +224,6 @@ Abu Dhabi (HQ), Barcelona, London, Los Angeles, Mumbai, Paris, Seoul, Shanghai, 
 ---
 
 <div align="center">
-
-<br/>
 
 <sub>A <a href="https://zhyra.com">Zhyra</a> ecosystem venture</sub>
 

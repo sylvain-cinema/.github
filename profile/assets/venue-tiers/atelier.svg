@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <filter id="ga" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0.5 0 0 0 0  0 0.2 0.4 0 0  0.3 0 0.7 0 0  0 0 0 0.25 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pa"><feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="sa"><feTurbulence type="fractalNoise" baseFrequency="0 0.4" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.012"/></feComponentTransfer></filter>
+    <filter id="node-glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0.4 0 0 0 0  0 0.15 0.3 0 0  0.3 0 0.6 0 0  0 0 0 0.15 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bg-at" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#08060e"/><stop offset="100%" stop-color="#050408"/>
+    </linearGradient>
+    <linearGradient id="at-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.15"/><stop offset="100%" stop-color="#6d28d9" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="card-at" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#140e1e" stop-opacity="0.9"/><stop offset="100%" stop-color="#08060e" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="pipe-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.15"/><stop offset="50%" stop-color="#c084fc" stop-opacity="0.25"/><stop offset="100%" stop-color="#a855f7" stop-opacity="0.15"/>
+    </linearGradient>
+    <radialGradient id="amb-at" cx="50%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.015"/><stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow-at" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#6d28d9" opacity="0.4"/>
+    </marker>
+    <style>
+      text { font-family: 'SF Pro Display', -apple-system, 'Inter', system-ui, sans-serif; }
+      .tier-name { font-size: 22px; font-weight: 200; fill: #c084fc; letter-spacing: 0.2em; }
+      .tier-sub { font-size: 10px; fill: #6d28d9; letter-spacing: 0.15em; text-transform: uppercase; }
+      .spec-title { font-size: 8px; font-weight: 600; fill: #7c3aed; letter-spacing: 0.08em; text-transform: uppercase; }
+      .spec-label { font-size: 6.5px; fill: #64748b; }
+      .spec-value { font-size: 7.5px; fill: #e2e8f0; font-family: 'SF Mono', monospace; }
+      .node-title { font-size: 8px; font-weight: 600; fill: #e2e8f0; letter-spacing: 0.04em; }
+      .node-sub { font-size: 6.5px; fill: #94a3b8; }
+      .code { font-size: 6.5px; fill: #c084fc; font-family: 'SF Mono', monospace; }
+      .eng { font-size: 5.5px; fill: #475569; font-family: 'SF Mono', monospace; }
+      .arrow-line { stroke: #6d28d9; stroke-width: 0.8; fill: none; marker-end: url(#arrow-at); opacity: 0.3; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="750" rx="8" fill="url(#bg-at)"/>
+  <rect width="1200" height="750" rx="8" fill="url(#amb-at)"/>
+  <rect width="1200" height="750" rx="8" fill="url(#sa)" opacity="0.4"/>
+  <rect width="1200" height="750" rx="8" fill="none" stroke="url(#at-edge)" stroke-width="0.8"/>
+  <line x1="18" y1="8" x2="18" y2="28" stroke="#a855f7" stroke-width="0.8" opacity="0.15"/>
+  <line x1="8" y1="18" x2="28" y2="18" stroke="#a855f7" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Header -->
+  <text x="600" y="42" text-anchor="middle" class="tier-sub">CREATOR SUITE</text>
+  <text x="600" y="72" text-anchor="middle" class="tier-name" filter="url(#ga)">SYLVAIN ATELIER</text>
+  <line x1="380" y1="82" x2="820" y2="82" stroke="url(#at-edge)" stroke-width="0.4"/>
+  <text x="600" y="98" text-anchor="middle" style="font-size:8px; fill:#64748b;">B2B software suite for filmmakers  ·  Master once, deploy everywhere  ·  AI-powered scene analysis  ·  Native content pipeline</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- CONTENT PIPELINE VISUALIZATION                  -->
+  <!-- This shows the software flow, not a physical    -->
+  <!-- space — because ATELIER is a toolset            -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Pipeline flow bar -->
+  <rect x="60" y="118" width="1080" height="35" rx="4" fill="url(#pipe-grad)"/>
+  <text x="600" y="140" text-anchor="middle" style="font-size:7px; fill:#c084fc; letter-spacing:0.1em; font-family:SF Mono,monospace;">CONTENT PIPELINE: SOURCE → INGEST → UPSCALE → GRADE → SPATIALIZE → METADATA → CERTIFY → DISTRIBUTE</text>
+
+  <!-- Pipeline nodes (visual flow diagram) -->
+  <!-- Node 1: Source -->
+  <rect x="60" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="60" y="170" width="130" height="90" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.4" opacity="0.3"/>
+  <rect x="60" y="170" width="3" height="90" rx="1" fill="#a855f7" opacity="0.3"/>
+  <text x="78" y="192" class="node-title">SOURCE</text>
+  <text x="78" y="206" class="node-sub">Import any format:</text>
+  <text x="78" y="218" class="code">HEVC · AV1 · ProRes</text>
+  <text x="78" y="230" class="code">DPX · EXR · MXF</text>
+  <text x="78" y="244" class="code">Dolby Atmos · DTS:X</text>
+  <line x1="190" y1="215" x2="215" y2="215" class="arrow-line"/>
+
+  <!-- Node 2: AI Upscale -->
+  <rect x="215" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="215" y="170" width="130" height="90" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.4" opacity="0.3"/>
+  <rect x="215" y="170" width="3" height="90" rx="1" fill="#f59e0b" opacity="0.3"/>
+  <text x="233" y="192" class="node-title" fill="#fde68a">AI UPSCALE</text>
+  <text x="233" y="206" class="node-sub">Neural super-resolution</text>
+  <text x="233" y="218" class="code">4K → 8K → 16K</text>
+  <text x="233" y="230" class="code">Grain preservation</text>
+  <text x="233" y="244" class="code">sylvain-sr-v2 model</text>
+  <line x1="345" y1="215" x2="370" y2="215" class="arrow-line"/>
+
+  <!-- Node 3: HDR Grade -->
+  <rect x="370" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="370" y="170" width="130" height="90" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.4" opacity="0.3"/>
+  <rect x="370" y="170" width="3" height="90" rx="1" fill="#f59e0b" opacity="0.3"/>
+  <text x="388" y="192" class="node-title" fill="#fde68a">HDR GRADE</text>
+  <text x="388" y="206" class="node-sub">Tone mapping to target</text>
+  <text x="388" y="218" class="code">PQ (ST 2084)</text>
+  <text x="388" y="230" class="code">15K / 12K / 6K nits</text>
+  <text x="388" y="244" class="code">Dynamic per-scene meta</text>
+  <line x1="500" y1="215" x2="525" y2="215" class="arrow-line"/>
+
+  <!-- Node 4: WFS Spatialize -->
+  <rect x="525" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="525" y="170" width="130" height="90" rx="5" fill="none" stroke="#0e7490" stroke-width="0.4" opacity="0.3"/>
+  <rect x="525" y="170" width="3" height="90" rx="1" fill="#06b6d4" opacity="0.3"/>
+  <text x="543" y="192" class="node-title" fill="#67e8f9">SPATIALIZE</text>
+  <text x="543" y="206" class="node-sub">Atmos → Sonora WFS</text>
+  <text x="543" y="218" class="code">128 → 2,048+ channels</text>
+  <text x="543" y="230" class="code">True 3D positioning</text>
+  <text x="543" y="244" class="code">Sentio Suite mixer</text>
+  <line x1="655" y1="215" x2="680" y2="215" class="arrow-line"/>
+
+  <!-- Node 5: SENTIO Metadata -->
+  <rect x="680" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="680" y="170" width="130" height="90" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.4" opacity="0.3"/>
+  <rect x="680" y="170" width="3" height="90" rx="1" fill="#a855f7" opacity="0.3"/>
+  <text x="698" y="192" class="node-title" fill="#c084fc">AI METADATA</text>
+  <text x="698" y="206" class="node-sub">Scene tagging + emotion</text>
+  <text x="698" y="218" class="code">Auto haptic generation</text>
+  <text x="698" y="230" class="code">Depth map estimation</text>
+  <text x="698" y="244" class="code">Ambient cue mapping</text>
+  <line x1="810" y1="215" x2="835" y2="215" class="arrow-line"/>
+
+  <!-- Node 6: Certify -->
+  <rect x="835" y="170" width="130" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="835" y="170" width="130" height="90" rx="5" fill="none" stroke="#22c55e" stroke-width="0.4" opacity="0.3"/>
+  <rect x="835" y="170" width="3" height="90" rx="1" fill="#22c55e" opacity="0.3"/>
+  <text x="853" y="192" class="node-title" fill="#86efac">CERTIFY</text>
+  <text x="853" y="206" class="node-sub">Tier validation</text>
+  <text x="853" y="218" class="code">Quality scoring</text>
+  <text x="853" y="230" class="code">Compliance check</text>
+  <text x="853" y="244" class="code">Sylvain Certified</text>
+  <line x1="965" y1="215" x2="990" y2="215" class="arrow-line"/>
+
+  <!-- Node 7: Output -->
+  <rect x="990" y="170" width="150" height="90" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="990" y="170" width="150" height="90" rx="5" fill="none" stroke="#a855f7" stroke-width="0.6" opacity="0.4"/>
+  <rect x="990" y="170" width="3" height="90" rx="1" fill="#c084fc" opacity="0.4"/>
+  <text x="1008" y="192" class="node-title" fill="#c084fc">DEPLOY</text>
+  <text x="1008" y="206" class="node-sub">Auto-scale output:</text>
+  <text x="1008" y="218" class="code" fill="#fcd34d">SANCTUM  16K · 15K nits</text>
+  <text x="1008" y="230" class="code" fill="#22d3ee">VISIONNAIRE  16K · 12K</text>
+  <text x="1008" y="242" class="code" fill="#f97316">ETOILEE  8K · 6K nits</text>
+
+  <!-- ═══ TOOL PANELS ═══ -->
+
+  <!-- Display Tools -->
+  <rect x="60" y="285" width="350" height="145" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="60" y="285" width="350" height="145" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.2"/>
+  <rect x="60" y="285" width="350" height="26" rx="5" fill="#140e1e" opacity="0.5"/>
+  <rect x="65" y="288" width="3" height="20" rx="1" fill="#f59e0b" opacity="0.3"/>
+  <text x="80" y="303" class="spec-title" fill="#d97706">DISPLAY MASTERING TOOLS</text>
+  <text x="78" y="326" class="spec-label">Master Format</text><text x="200" y="326" class="spec-value">Up to 16K (15360 x 8640)</text>
+  <text x="78" y="340" class="spec-label">HDR</text><text x="200" y="340" class="spec-value">Dynamic per-scene metadata · PQ ST 2084</text>
+  <text x="78" y="354" class="spec-label">Color</text><text x="200" y="354" class="spec-value">Rec.2020 mastering · 12-bit · ACES AP0</text>
+  <text x="78" y="368" class="spec-label">Output</text><text x="200" y="368" class="spec-value">Auto-scale per venue tier</text>
+  <text x="78" y="382" class="spec-label">Import</text><text x="200" y="382" class="spec-value">HEVC · AV1 · ProRes · DPX · EXR · MXF</text>
+  <text x="78" y="396" class="spec-label">Export</text><text x="200" y="396" class="spec-value">Sylvain Certified (.sylv) · Per-tier packages</text>
+  <text x="78" y="416" class="code">sylvain master input.mov --tier visionnaire</text>
+
+  <!-- Audio Tools -->
+  <rect x="430" y="285" width="350" height="145" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="430" y="285" width="350" height="145" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.2"/>
+  <rect x="430" y="285" width="350" height="26" rx="5" fill="#140e1e" opacity="0.5"/>
+  <rect x="435" y="288" width="3" height="20" rx="1" fill="#06b6d4" opacity="0.3"/>
+  <text x="450" y="303" class="spec-title" fill="#0891b2">AUDIO AUTHORING TOOLS</text>
+  <text x="448" y="326" class="spec-label">Mixer</text><text x="570" y="326" class="spec-value">Sentio Suite — native WFS authoring</text>
+  <text x="448" y="340" class="spec-label">Objects</text><text x="570" y="340" class="spec-value">Unlimited (vs Atmos 128 max)</text>
+  <text x="448" y="354" class="spec-label">Render</text><text x="570" y="354" class="spec-value">Real-time preview with venue simulation</text>
+  <text x="448" y="368" class="spec-label">Import</text><text x="570" y="368" class="spec-value">Dolby Atmos → Sonora WFS auto-conversion</text>
+  <text x="448" y="382" class="spec-label">Positioning</text><text x="570" y="382" class="spec-value">&lt; 2 cm accuracy · True 3D coordinates</text>
+  <text x="448" y="396" class="spec-label">Channels</text><text x="570" y="396" class="spec-value">2,048+ discrete (scalable per venue)</text>
+  <text x="448" y="416" class="code">sylvain spatialize --from atmos --to wfs</text>
+
+  <!-- AI Tools -->
+  <rect x="800" y="285" width="340" height="145" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="800" y="285" width="340" height="145" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.2"/>
+  <rect x="800" y="285" width="340" height="26" rx="5" fill="#140e1e" opacity="0.5"/>
+  <rect x="805" y="288" width="3" height="20" rx="1" fill="#a855f7" opacity="0.3"/>
+  <text x="820" y="303" class="spec-title">AI &amp; INTELLIGENCE TOOLS</text>
+  <text x="818" y="326" class="spec-label">Haptic</text><text x="940" y="326" class="spec-value">AI-generated from audio + narrative</text>
+  <text x="818" y="340" class="spec-label">Scene Analysis</text><text x="940" y="340" class="spec-value">Automatic emotion tagging from video</text>
+  <text x="818" y="354" class="spec-label">Depth Maps</text><text x="940" y="354" class="spec-value">Neural estimation for STRATUM layers</text>
+  <text x="818" y="368" class="spec-label">Ambient Cues</text><text x="940" y="368" class="spec-value">Auto climate/scent/wind mapping</text>
+  <text x="818" y="382" class="spec-label">Processing</text><text x="940" y="382" class="spec-value">Cloud-scalable · Real-time preview</text>
+  <text x="818" y="396" class="spec-label">Zero Authoring</text><text x="940" y="396" class="spec-value">0 hrs (vs 4DX 40-80 hrs/film)</text>
+  <text x="818" y="416" class="code">sylvain certify ./mastered/ --tier sanctum</text>
+
+  <!-- ═══ SDK / DEVELOPER TOOLS ═══ -->
+  <rect x="60" y="450" width="1080" height="80" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="60" y="450" width="1080" height="80" rx="5" fill="none" stroke="#6d28d9" stroke-width="0.3" opacity="0.2"/>
+  <rect x="60" y="450" width="3" height="80" rx="1" fill="#c084fc" opacity="0.3"/>
+  <text x="80" y="470" class="spec-title">DEVELOPER SDK &amp; CLI</text>
+
+  <text x="80" y="490" class="code">npm install @sylvain-cinema/sdk</text>
+  <text x="350" y="490" class="code">pip install sylvain-sdk</text>
+  <text x="600" y="490" class="code">npm install -g @sylvain-cinema/cli</text>
+
+  <text x="80" y="510" class="spec-label">TypeScript SDK</text><text x="200" y="510" class="spec-value">@sylvain-cinema/core · /spectra · /sonora · /sentio</text>
+  <text x="500" y="510" class="spec-label">Python SDK</text><text x="600" y="510" class="spec-value">sylvain_sdk · spectra · sonora · sentio modules</text>
+  <text x="880" y="510" class="spec-label">API</text><text x="940" y="510" class="spec-value">gRPC (real-time) · REST · WebSocket</text>
+  <text x="80" y="524" class="spec-label">CLI Tools</text><text x="200" y="524" class="spec-value">sylvain master · certify · preview · status · spatialize</text>
+
+  <!-- ═══ OUTPUT FORMAT TABLE ═══ -->
+  <rect x="60" y="548" width="1080" height="70" rx="5" fill="url(#card-at)" filter="url(#pa)"/>
+  <rect x="60" y="548" width="1080" height="70" rx="5" fill="none" stroke="#21262d" stroke-width="0.3"/>
+  <text x="80" y="568" class="spec-title">AUTO-SCALE OUTPUT: MASTER ONCE, DEPLOY TO ALL TIERS</text>
+  <text x="80" y="586" class="code" fill="#fcd34d">SANCTUM      16K x 16K · PQ 15,000 nits · 512 ch · Sonora Elite    (bespoke)</text>
+  <text x="80" y="600" class="code" fill="#22d3ee">VISIONNAIRE  16K x 16K · PQ 12,000 nits · 2,048 ch · Sonora WFS   (reference)</text>
+  <text x="80" y="614" class="code" fill="#f97316">ETOILEE      8K x 4K   · PQ 6,000 nits  · 256 ch · Adaptive WFS   (mass premium)</text>
+
+  <!-- Footer -->
+  <rect x="60" y="635" width="1080" height="28" rx="4" fill="url(#card-at)"/>
+  <rect x="60" y="635" width="1080" height="28" rx="4" fill="none" stroke="#6d28d9" stroke-width="0.2" opacity="0.15"/>
+  <rect x="60" y="635" width="3" height="28" rx="1" fill="#c084fc" opacity="0.2"/>
+  <text x="78" y="653" style="font-size:7px; fill:#64748b;">ATELIER: The creator ecosystem enabling filmmakers to author experiences for Sylvain. Director-friendly. Real-time preview. Deploy globally.</text>
+  <text x="1130" y="653" text-anchor="end" class="eng">Sylvain Technologies Ltd</text>
+
+  <text x="600" y="695" text-anchor="middle" class="eng">Master once. Deploy everywhere. AI handles haptics, ambient, and emotion mapping. Zero manual effect authoring. Universal content pipeline.</text>
+  <text x="600" y="730" text-anchor="middle" style="font-size:5px; fill:#140e1e; letter-spacing:0.1em;">SYLVAIN ATELIER · CREATOR SUITE · B2B SAAS · CONFIDENTIAL</text>
+</svg>
